@@ -221,21 +221,21 @@ a:focus {
   font-weight: bold;
   text-transform: uppercase;
   padding: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 0.5px rgba(255, 255, 255, 0.2);
 }
 
 .slider_section .detail-box a {
   display: inline-block;
   padding: 10px 45px;
-  background-color: #133e3f;
-  border: 1px solid #133e3f;
+  background-color: #b4eaeb;
+  border: 1px solid #49e8eb;
   color: #ffffff;
   margin-top: 35px;
 }
 
 .slider_section .detail-box a:hover {
   background-color: transparent;
-  color: #133e3f;
+  color: #4ff0f3;
 }
 
 .slider_section #carouselExampleIndicators {
@@ -246,13 +246,13 @@ a:focus {
   width: 15px;
   height: 15px;
   background-color: transparent;
-  border: 3px solid #ffffff;
-  border-radius: 100%;
+  border: 3px solid #ffffffa9;
+  border-radius: 10%;
   opacity: 1;
 }
 
 .slider_section #carouselExampleIndicators li.active {
-  border-color: #133e3f;
+  border-color: #ec5e1cbb;
 }
 
 .special_section .special_container {
@@ -339,15 +339,15 @@ a:focus {
 .about_section .detail-box a {
   display: inline-block;
   padding: 10px 45px;
-  background-color: #133e3f;
-  border: 1px solid #133e3f;
+  background-color: #3ecdcfa1;
+  border: 1px solid #b0e8e9;
   color: #ffffff;
   margin-top: 15px;
 }
 
 .about_section .detail-box a:hover {
   background-color: transparent;
-  color: #133e3f;
+  color: #56fcff;
 }
 
 .course_section {
@@ -404,7 +404,7 @@ a:focus {
   position: absolute;
   left: 35px;
   bottom: 100px;
-  background-color: #4bc5b8;
+  background-color: #c3ece8;
   display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -430,7 +430,7 @@ a:focus {
   left: 35px;
   bottom: 25px;
   font-weight: bold;
-  color: #ffffff;
+  color: #da54179d;
   font-size: 24px;
 }
 
