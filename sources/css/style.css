@@ -90,14 +90,15 @@ body {
 
 .custom_nav-container .navbar-nav .nav-item .nav-link {
   padding: 45px 15px 15px;
-  color: #e44211e3;
+  color: #ff3c00;
+  text-decoration: solid;
   text-align: center;
   position: relative;
   text-transform: uppercase;
 }
 
 .custom_nav-container .navbar-nav .nav-item:hover .nav-link, .custom_nav-container .navbar-nav .nav-item.active .nav-link {
-  background-color: #133e3f;
+  background-color: #e78d25ce;
 }
 
 .custom_nav-container .form-inline {
