@@ -122,41 +122,27 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-da1_c1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-关于登录和注册板块。。。" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/12/12/da1_c1/">C 语言实验</a>
+      <a class="article-title" href="/2021/12/13/%E5%85%B3%E4%BA%8E%E7%99%BB%E5%BD%95%E5%92%8C%E6%B3%A8%E5%86%8C%E6%9D%BF%E5%9D%97%E3%80%82%E3%80%82%E3%80%82/">关于登录和注册板块。。。</a>
     </h1>
   
 
         
-        <a href="/2021/12/12/da1_c1/" class="archive-article-date">
-  	<time datetime="2021-12-12T13:38:27.898Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-12</time>
+        <a href="/2021/12/13/%E5%85%B3%E4%BA%8E%E7%99%BB%E5%BD%95%E5%92%8C%E6%B3%A8%E5%86%8C%E6%9D%BF%E5%9D%97%E3%80%82%E3%80%82%E3%80%82/" class="archive-article-date">
+  	<time datetime="2021-12-13T03:39:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="实验1"><a href="#实验1" class="headerlink" title="实验1"></a>实验1</h2><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line"><span class="comment">#define LEN 10</span></span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">   char array[LEN];//大写变小写</span><br><span class="line">   int i;</span><br><span class="line">   gets(array);</span><br><span class="line">   i=0;</span><br><span class="line">   <span class="keyword">while</span>(array[i]!=<span class="string">&#x27;\0&#x27;</span>)</span><br><span class="line">   &#123;</span><br><span class="line">      //start</span><br><span class="line">      <span class="keyword">if</span>(array[i]&gt;=<span class="string">&#x27;A&#x27;</span>&amp;&amp;array[i]&lt;=<span class="string">&#x27;Z&#x27;</span>)</span><br><span class="line">      &#123;</span><br><span class="line">         array[i]=array[i]+32;</span><br><span class="line">      &#125;</span><br><span class="line">      i++;</span><br><span class="line">      //end</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>,array);</span><br><span class="line">   <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-<hr>
-<h3 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h3><p>模拟碱基配对</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line"><span class="comment">#define LEN 100</span></span><br><span class="line">int main(void)</span><br><span class="line">&#123;</span><br><span class="line">    char one[LEN],the_other[LEN];  //one用于存储原串；the_other用于存储匹配串</span><br><span class="line">    int i,j;</span><br><span class="line">    gets(one);</span><br><span class="line">    i=0, j=0;</span><br><span class="line">    <span class="keyword">while</span>(one[i]!=<span class="string">&#x27;\0&#x27;</span>)</span><br><span class="line">    &#123;</span><br><span class="line">       //start</span><br><span class="line">       <span class="keyword">if</span>(one[i]==<span class="string">&#x27;A&#x27;</span>)</span><br><span class="line">       &#123;</span><br><span class="line">           the_other[j]=<span class="string">&#x27;T&#x27;</span>;</span><br><span class="line">       &#125;</span><br><span class="line">        <span class="keyword">if</span>(one[i]==<span class="string">&#x27;T&#x27;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            the_other[j]=<span class="string">&#x27;A&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(one[i]==<span class="string">&#x27;C&#x27;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">             the_other[j]=<span class="string">&#x27;G&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(one[i]==<span class="string">&#x27;G&#x27;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            the_other[j]=<span class="string">&#x27;C&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">         ++i;</span><br><span class="line">         ++j;</span><br><span class="line">       //end</span><br><span class="line">    &#125;</span><br><span class="line">    the_other[j] = <span class="string">&#x27;\0&#x27;</span>;</span><br><span class="line">    puts(the_other);</span><br><span class="line">    <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><p>数据压缩存储</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line"><span class="comment">#define LEN 100</span></span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">   int compress(char array[], int count[]);</span><br><span class="line">   char array[LEN];</span><br><span class="line">   int count[LEN];</span><br><span class="line">   int i;</span><br><span class="line">   int tail; //count数组的有效最末下标</span><br><span class="line">  <span class="keyword">while</span>(scanf(<span class="string">&quot;%s&quot;</span>,array)!=-1)</span><br><span class="line">   &#123;</span><br><span class="line">      tail = compress(array, count);</span><br><span class="line">      <span class="keyword">for</span>(i=0;i&lt;tail;i++)</span><br><span class="line">        i&lt;tail-1 ? <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,count[i]) : <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,count[i]);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br><span class="line">int compress(char array[], int count[])</span><br><span class="line">&#123;</span><br><span class="line">//start</span><br><span class="line">  <span class="keyword">for</span>(int i=0;i&lt;LEN;i++)</span><br><span class="line">   count[i]=0;</span><br><span class="line">   int j=0;</span><br><span class="line">   <span class="keyword">for</span>(int i=0;i&lt;LEN;i++)</span><br><span class="line">   &#123;</span><br><span class="line">       <span class="keyword">if</span>(array[i]==<span class="string">&#x27;0&#x27;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            count[j]++;</span><br><span class="line">            <span class="keyword">if</span>(array[i+1]==<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">            &#123;</span><br><span class="line">               j++;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(array[i+1]==<span class="string">&#x27;\0&#x27;</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(array[i]==<span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            count[j]++;</span><br><span class="line">            <span class="keyword">if</span>(array[i+1]==<span class="string">&#x27;0&#x27;</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(array[i+1]==<span class="string">&#x27;\0&#x27;</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">   &#125;</span><br><span class="line">    <span class="built_in">return</span> j;</span><br><span class="line">//end</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<hr>
-<h3 id="4"><a href="#4" class="headerlink" title="4"></a>4</h3><p>凯撒加密</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;string.h&gt;</span></span><br><span class="line"><span class="comment">#define LEN 81</span></span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">   void Caesar_transform(char message[], int <span class="built_in">shift</span>);</span><br><span class="line">   char message[LEN];</span><br><span class="line">   int <span class="built_in">shift</span>;</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;Enter message to be encrypted: &quot;</span>);</span><br><span class="line">   gets(message);</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;Enter shift amount (1-25): &quot;</span>);</span><br><span class="line">   scanf(<span class="string">&quot;%d&quot;</span>,&amp;<span class="built_in">shift</span>);</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;Encrypted message: &quot;</span>);</span><br><span class="line">   Caesar_transform(message, <span class="built_in">shift</span>);</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>,message);</span><br><span class="line">   <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br><span class="line">void Caesar_transform(char message[], int <span class="built_in">shift</span>)</span><br><span class="line">&#123;</span><br><span class="line">//start</span><br><span class="line"><span class="keyword">for</span>(int i=0;i&lt;LEN;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(message[i]&gt;=<span class="string">&#x27;a&#x27;</span>&amp;&amp;message[i]&lt;=<span class="string">&#x27;z&#x27;</span>)</span><br><span class="line">    message[i]=(message[i]-<span class="string">&#x27;a&#x27;</span>+<span class="built_in">shift</span>)%26+<span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">     <span class="keyword">if</span>(message[i]&gt;=<span class="string">&#x27;A&#x27;</span>&amp;&amp;message[i]&lt;=<span class="string">&#x27;Z&#x27;</span>)</span><br><span class="line">    message[i]=(message[i]-<span class="string">&#x27;A&#x27;</span>+<span class="built_in">shift</span>)%26+<span class="string">&#x27;A&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//end</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
+        <p>都留着吧，之后说不定用得上</p>
 
       
 
@@ -170,7 +156,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/12/12/da1_c1/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/12/13/%E5%85%B3%E4%BA%8E%E7%99%BB%E5%BD%95%E5%92%8C%E6%B3%A8%E5%86%8C%E6%9D%BF%E5%9D%97%E3%80%82%E3%80%82%E3%80%82/">展开全文 >></a>
         </p>
       
 
@@ -200,27 +186,27 @@
 
 
   
-    <article id="post-C语言实验1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-log" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/12/12/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C1/">C语言实验1</a>
+      <a class="article-title" href="/2021/12/13/log/">log</a>
     </h1>
   
 
         
-        <a href="/2021/12/12/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C1/" class="archive-article-date">
-  	<time datetime="2021-12-12T13:37:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-12</time>
+        <a href="/2021/12/13/log/" class="archive-article-date">
+  	<time datetime="2021-12-13T03:38:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1</p>
+        <p>登录和注册页面打算不整了，大家随便来看就好。。。</p>
 
       
 
@@ -234,7 +220,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/12/12/C%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C1/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/12/13/log/">展开全文 >></a>
         </p>
       
 
