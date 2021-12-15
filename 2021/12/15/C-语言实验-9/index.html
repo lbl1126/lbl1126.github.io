@@ -6,22 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lbl1126.github.io">
-  <title>lubolin</title>
+  <title>C 语言实验 9 | lubolin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Label">
-<meta property="og:type" content="website">
-<meta property="og:title" content="lubolin">
-<meta property="og:url" content="https://lbl1126.github.io/sources/about.html">
+  <meta name="description" content="C语言 锐格实验九.链表2-基本访问操作1、查找指定结点的前驱。利用前面学到的尾插法创建链表的方法，建立一个具有n个结点的单链表，之后输入一个整数x，查找x在链表中的前驱结点是哪个？若x是第一个结点，则输出“没有前驱”，如果x不存在，则输出“x不存在”。 123456789101112131415161718192021222324252627282930313233343536373839404">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C 语言实验 9">
+<meta property="og:url" content="https://lbl1126.github.io/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-9/index.html">
 <meta property="og:site_name" content="lubolin">
-<meta property="og:description" content="Label">
+<meta property="og:description" content="C语言 锐格实验九.链表2-基本访问操作1、查找指定结点的前驱。利用前面学到的尾插法创建链表的方法，建立一个具有n个结点的单链表，之后输入一个整数x，查找x在链表中的前驱结点是哪个？若x是第一个结点，则输出“没有前驱”，如果x不存在，则输出“x不存在”。 123456789101112131415161718192021222324252627282930313233343536373839404">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://lbl1126.github.io/sources/images/a-1.jpg">
-<meta property="og:image" content="https://lbl1126.github.io/sources/images/a-2.jpg">
-<meta property="article:published_time" content="2021-12-13T02:27:20.498Z">
-<meta property="article:modified_time" content="2021-12-13T02:27:20.498Z">
+<meta property="article:published_time" content="2021-12-15T11:37:10.000Z">
+<meta property="article:modified_time" content="2021-12-15T11:52:14.343Z">
 <meta property="article:author" content="lubolin">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://lbl1126.github.io/sources/images/a-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="lubolin" type="application/atom+xml">
   
@@ -125,204 +122,36 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-C-语言实验-9" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      C 语言实验 9
+    </h1>
+  
+
+        
+        <a href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-9/" class="archive-article-date">
+  	<time datetime="2021-12-15T11:37:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-15</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-
-<head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-
-  <title>Label</title>
-
-
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap" rel="stylesheet" />
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
-</head>
-
-<body class="sub_page">
-  <div class="hero_area">
-    <!-- header section strats -->
-    <header class="header_section">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
-           
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
-            <ul class="navbar-nav  ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">主页 <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html"> 关于 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="course.html"> 资源 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="event.html"> 事件 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">联系站长</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="login.html">登录</a>
-              </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
-              <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
-            </form>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <!-- end header section -->
-  </div>
-<!-- about section -->
-<section class="about_section layout_padding">
-  <div class="side_img">
-    
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="img_container">
-          <div class="img-box b1">
-            <img src="images/a-1.jpg" alt="" />
-          </div>
-          <div class="img-box b2">
-            <img src="images/a-2.jpg" alt="" />
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="detail-box">
-          <div class="heading_container">
-            <h3>
-              个人简介
-            </h3>
-            <p>
-              一段简单的个人简介：本人性别男，身高体重不详，重度拖延症患者，喜欢娱乐，喜欢运动，喜欢吃饭睡觉
-              比较佛系，只有当ddl来临时才会激发他的动力......
-            </p>
-            <a href="">
-              Read More
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- end about section -->
-
-  <!-- info section -->
-  <section class="info_section layout_padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="info_menu">
-            <h5>
-              QUICK LINKS
-            </h5>
-            <ul class="navbar-nav  ">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">主页 <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html"> 关于 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="course.html"> 资源 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="event.html"> 事件 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">联系站长</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="login.html">登录</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="info_course">
-            <h5>
-              NEFU
-            </h5>
-            <p>
-              东北林业大学（Northeast Forestry University），简称东北林大（NEFU） 
-              ，位于黑龙江省哈尔滨市，是一所以林科为优势、林业工程为特色的中华人民共和国教育部直属高校，
-              由教育部、国家林业局、黑龙江省人民政府三方共建，国家“世界一流学科建设高校”，国家“211工程”、“985工程优势学科创新平台”重点建设高校，
-              高水平行业特色大学优质资源共享联盟成员高校，“双一流”农科联盟成员高校 
-            </p>
-          </div>
-        </div>
-
-        <div class="col-md-5 offset-md-1">
-          <div class="info_news">
-            <h5>
-              Computer Science
-            </h5>
-            <div class="info_contact">
-              <!-- <a href="">
-                Location
-              </a> -->
-              <p>
-                计算机科学与技术（Computer Science and Technology）是国家一级学科，
-                下设信息安全、软件工程、计算机软件与理论、计算机系统结构、计算机应用技术、计算机技术等专业
-                主修大数据技术导论、数据采集与处理实践（Python）、Web前/后端开发、统计与数据分析、机器学习、
-                高级数据库系统、数据可视化、云计算技术、人工智能、自然语言处理、媒体大数据案例分析、网络空间安全、
-                计算机网络、数据结构、软件工程、操作系统等课程，以及大数据方向系列实验，
-                并完成程序设计、数据分析、机器学习、数据可视化、大数据综合应用实践、专业实训和毕业设计等多种实践环节。
-              </p>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end info section -->
-
-  <!-- footer section -->
-  <footer class="container-fluid footer_section">
-    <p>lbl~ All rights reserved.</p>
-  </footer>
-  <!-- footer section -->
-
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
-
-</body>
-
-</html>
+        <h4 id="C语言-锐格实验"><a href="#C语言-锐格实验" class="headerlink" title="C语言 锐格实验"></a>C语言 锐格实验</h4><h5 id="九-链表2-基本访问操作"><a href="#九-链表2-基本访问操作" class="headerlink" title="九.链表2-基本访问操作"></a>九.链表2-基本访问操作</h5><h3 id="1、"><a href="#1、" class="headerlink" title="1、"></a>1、</h3><p>查找指定结点的前驱。利用前面学到的尾插法创建链表的方法，建立一个具有n个结点的单链表，之后输入一个整数x，查找x在链表中的前驱结点是哪个？若x是第一个结点，则输出“没有前驱”，如果x不存在，则输出“x不存在”。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line">struct table&#123;</span><br><span class="line">    int num;</span><br><span class="line">    struct table* next;</span><br><span class="line">&#125;;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    int n,i;</span><br><span class="line">    int findnum,flag;</span><br><span class="line">    struct table *head,*p,*q;</span><br><span class="line">    <span class="keyword">while</span>(scanf(<span class="string">&quot;%d&quot;</span>,&amp;n)!=-1)</span><br><span class="line">    &#123;</span><br><span class="line">        flag=0;</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            p=(struct table *)malloc(sizeof(struct table));</span><br><span class="line">            scanf(<span class="string">&quot;%d&quot;</span>,&amp;p-&gt;num);</span><br><span class="line">            <span class="keyword">if</span>(i==0)</span><br><span class="line">                head=q=p;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                q-&gt;next=p;</span><br><span class="line">            q=p;</span><br><span class="line">            p-&gt;next=NULL;</span><br><span class="line">        &#125;</span><br><span class="line">        scanf(<span class="string">&quot;%d&quot;</span>,&amp;findnum);</span><br><span class="line">        q=p=head;</span><br><span class="line">        <span class="keyword">while</span>(p!=NULL)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(p-&gt;num==findnum)</span><br><span class="line">            &#123;</span><br><span class="line">                flag=1;</span><br><span class="line">                <span class="keyword">if</span>(p==head)&#123;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">&quot;没有前驱\n&quot;</span>);</span><br><span class="line">                    <span class="built_in">break</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,q-&gt;num);</span><br><span class="line">                    <span class="built_in">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            q=p;</span><br><span class="line">            p=p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(flag==0) <span class="built_in">printf</span>(<span class="string">&quot;x不存在\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2、"><a href="#2、" class="headerlink" title="2、"></a>2、</h3><p>查找链表中有多少个值为偶数的结点。利用前面学到的头插法创建链表的方法，建立一个具有n个结点的单链表，之后统计一下该链表中有多少个值为偶数的结点。有则输出个数，没有则输出0。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line">struct table&#123;</span><br><span class="line">    int num;</span><br><span class="line">    struct table *next;</span><br><span class="line">&#125;;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    int i,n;</span><br><span class="line">    struct table *head,*q,*p;</span><br><span class="line">    <span class="keyword">while</span>(scanf(<span class="string">&quot;%d&quot;</span>,&amp;n)!=-1)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            p=(struct table *)malloc(sizeof(struct table));</span><br><span class="line">            scanf(<span class="string">&quot;%d&quot;</span>,&amp;p-&gt;num);</span><br><span class="line">            <span class="keyword">if</span>(i==0)</span><br><span class="line">                head=q=p;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                q-&gt;next=p;</span><br><span class="line">            q=p;</span><br><span class="line">            p-&gt;next=NULL;</span><br><span class="line">        &#125;</span><br><span class="line">        p=head;</span><br><span class="line">        int num=0;</span><br><span class="line">        <span class="keyword">while</span>(p!=NULL)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>((p-&gt;num)%2==0) num++;</span><br><span class="line">            p=p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,num);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3、"><a href="#3、" class="headerlink" title="3、"></a>3、</h3><p>删除所有结点值为x的结点。利用前面学到的尾插法创建链表的方法，建立一个具有n个结点的单链表，之后删除其中所有值为x的结点（设x有多个）。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line">struct table&#123;</span><br><span class="line">    int num;</span><br><span class="line">    struct table *next;</span><br><span class="line">&#125;;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    int i,n;</span><br><span class="line">    struct table *head,*q,*p;</span><br><span class="line">    <span class="keyword">while</span>(scanf(<span class="string">&quot;%d&quot;</span>,&amp;n)!=-1)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            p=(struct table *)malloc(sizeof(struct table));</span><br><span class="line">            scanf(<span class="string">&quot;%d&quot;</span>,&amp;p-&gt;num);</span><br><span class="line">            <span class="keyword">if</span>(i==0)</span><br><span class="line">                head=q=p;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                q-&gt;next=p;</span><br><span class="line">            q=p;</span><br><span class="line">            p-&gt;next=NULL;</span><br><span class="line">        &#125;</span><br><span class="line">        int deletenum;</span><br><span class="line">        scanf(<span class="string">&quot;%d&quot;</span>,&amp;deletenum);</span><br><span class="line">        q=p=head;</span><br><span class="line">        <span class="keyword">while</span>(p!=NULL)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(p-&gt;num==deletenum)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(p==head)&#123;</span><br><span class="line">                    head=head-&gt;next;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    q-&gt;next=p-&gt;next;</span><br><span class="line">                    p=p-&gt;next;</span><br><span class="line">                    <span class="built_in">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            q=p;</span><br><span class="line">            p=p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,head-&gt;num);</span><br><span class="line">        p=head-&gt;next;</span><br><span class="line">        <span class="keyword">while</span>(p!=NULL)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;  %d&quot;</span>,p-&gt;num);</span><br><span class="line">            p=p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4、"><a href="#4、" class="headerlink" title="4、"></a>4、</h3><p>利用尾插法建立一个递增有序的链表，（输入值有序即可），之后在这个链表中插1个x值，使链表仍然有序。利用前面学到的尾插法创建链表的方法，建立一个具有n个结点的递增有序的单链表，（此处使输入的数值递增有序即可），之后再输入一个整数x，将x插入到上述链表的合适的位置上，使得链表仍然有序。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line">struct table&#123;</span><br><span class="line">    int num;</span><br><span class="line">    struct table *next;</span><br><span class="line">&#125;;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    int i,n;</span><br><span class="line">    struct table *head,*q,*p,*t;</span><br><span class="line">    <span class="keyword">while</span>(scanf(<span class="string">&quot;%d&quot;</span>,&amp;n)!=-1)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            p=(struct table *)malloc(sizeof(struct table));</span><br><span class="line">            scanf(<span class="string">&quot;%d&quot;</span>,&amp;p-&gt;num);</span><br><span class="line">            <span class="keyword">if</span>(i==0)</span><br><span class="line">                head=q=p;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                q-&gt;next=p;</span><br><span class="line">            q=p;</span><br><span class="line">            p-&gt;next=NULL;</span><br><span class="line">        &#125;</span><br><span class="line">        int insertnum;</span><br><span class="line">        scanf(<span class="string">&quot;%d&quot;</span>,&amp;insertnum);</span><br><span class="line">        q=p=head;</span><br><span class="line">        <span class="keyword">while</span>(p!=NULL)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(p-&gt;num&gt;insertnum)</span><br><span class="line">            &#123;</span><br><span class="line">                t=(struct table *)malloc(sizeof(struct table));</span><br><span class="line">                t-&gt;num=insertnum;</span><br><span class="line">                <span class="keyword">if</span>(p==head)&#123;</span><br><span class="line">                    t-&gt;num=head-&gt;num;</span><br><span class="line">                    head-&gt;num=insertnum;</span><br><span class="line">                    t-&gt;next=head-&gt;next;</span><br><span class="line">                    head-&gt;next=t;</span><br><span class="line">                    <span class="built_in">break</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    t-&gt;next=q-&gt;next;</span><br><span class="line">                    q-&gt;next=t;</span><br><span class="line">                    <span class="built_in">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(p-&gt;next==NULL &amp;&amp; insertnum&gt;p-&gt;num)</span><br><span class="line">            &#123;</span><br><span class="line">                t=(struct table *)malloc(sizeof(struct table));</span><br><span class="line">                t-&gt;num=insertnum;</span><br><span class="line">                t-&gt;next=NULL;</span><br><span class="line">                p-&gt;next=t;</span><br><span class="line">                <span class="built_in">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            q=p;</span><br><span class="line">            p=p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        p=head-&gt;next;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,head-&gt;num);</span><br><span class="line">        <span class="keyword">while</span>(p!=NULL)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;  %d&quot;</span>,p-&gt;num);</span><br><span class="line">            p=p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="5、"><a href="#5、" class="headerlink" title="5、"></a>5、</h3><p>利用第4题中有序表插入数值的思想，编写程序，从空链表开始，逐个插入结点，最终建立一个递增有序的链表。完成输入和输出函数。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line">struct stu&#123;</span><br><span class="line">    int num;</span><br><span class="line">    struct stu *next;</span><br><span class="line">&#125;;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    int n,i,j,t;</span><br><span class="line">    <span class="keyword">while</span>(scanf(<span class="string">&quot;%d&quot;</span>,&amp;n)!=-1)</span><br><span class="line">    &#123;</span><br><span class="line">        struct stu *head,*p,*q;</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            p=(struct stu *)malloc(sizeof(struct stu));</span><br><span class="line">            scanf(<span class="string">&quot;%d&quot;</span>,&amp;p-&gt;num);</span><br><span class="line">            <span class="keyword">if</span>(i==0)</span><br><span class="line">                head=q=p;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                q-&gt;next=p;</span><br><span class="line">            q=p;</span><br><span class="line">            p-&gt;next=NULL;</span><br><span class="line">        &#125;</span><br><span class="line">        p=q=head;</span><br><span class="line">        <span class="keyword">while</span>(p)</span><br><span class="line">        &#123;</span><br><span class="line">            q=p-&gt;next;</span><br><span class="line">            <span class="keyword">while</span>(q)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(q-&gt;num&lt;p-&gt;num)</span><br><span class="line">                &#123;</span><br><span class="line">                    t=q-&gt;num;</span><br><span class="line">                    q-&gt;num=p-&gt;num;</span><br><span class="line">                    p-&gt;num=t;</span><br><span class="line">                &#125;</span><br><span class="line">                q=q-&gt;next;</span><br><span class="line">            &#125;</span><br><span class="line">            p=p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        p=head-&gt;next;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,head-&gt;num);</span><br><span class="line">        <span class="keyword">while</span>(p)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;  %d&quot;</span>,p-&gt;num);</span><br><span class="line">            p=p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
 
@@ -381,7 +210,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://lbl1126.github.io/sources/about.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://lbl1126.github.io/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-9/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -393,6 +222,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-10/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          C 语言实验 10
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C 语言实验 8</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -452,7 +300,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

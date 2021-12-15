@@ -6,22 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lbl1126.github.io">
-  <title>lubolin</title>
+  <title>C  语言实验 6 | lubolin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Label">
-<meta property="og:type" content="website">
-<meta property="og:title" content="lubolin">
-<meta property="og:url" content="https://lbl1126.github.io/sources/about.html">
+  <meta name="description" content="C语言 锐格实验六.结构体数组 结构体—求n个学生的平均成绩：对给定的n个同学的成绩，求其平均成绩，并输出高于平均分之上的所有同学。  123456789101112131415161718192021222324252627282930#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;struct student&amp;#123;    char num">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C  语言实验 6">
+<meta property="og:url" content="https://lbl1126.github.io/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-6/index.html">
 <meta property="og:site_name" content="lubolin">
-<meta property="og:description" content="Label">
+<meta property="og:description" content="C语言 锐格实验六.结构体数组 结构体—求n个学生的平均成绩：对给定的n个同学的成绩，求其平均成绩，并输出高于平均分之上的所有同学。  123456789101112131415161718192021222324252627282930#include &lt;stdio.h&gt;#include &lt;stdlib.h&gt;struct student&amp;#123;    char num">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://lbl1126.github.io/sources/images/a-1.jpg">
-<meta property="og:image" content="https://lbl1126.github.io/sources/images/a-2.jpg">
-<meta property="article:published_time" content="2021-12-13T02:27:20.498Z">
-<meta property="article:modified_time" content="2021-12-13T02:27:20.498Z">
+<meta property="article:published_time" content="2021-12-15T11:23:32.000Z">
+<meta property="article:modified_time" content="2021-12-15T11:51:25.956Z">
 <meta property="article:author" content="lubolin">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://lbl1126.github.io/sources/images/a-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="lubolin" type="application/atom+xml">
   
@@ -125,204 +122,39 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-C-语言实验-6" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      C  语言实验 6
+    </h1>
+  
+
+        
+        <a href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-6/" class="archive-article-date">
+  	<time datetime="2021-12-15T11:23:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-15</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
+        <h3 id="C语言-锐格实验"><a href="#C语言-锐格实验" class="headerlink" title="C语言 锐格实验"></a>C语言 锐格实验</h3><h5 id="六-结构体数组"><a href="#六-结构体数组" class="headerlink" title="六.结构体数组"></a>六.结构体数组</h5><ol>
+<li>结构体—求n个学生的平均成绩：对给定的n个同学的成绩，求其平均成绩，并输出高于平均分之上的所有同学。</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line">struct student&#123;</span><br><span class="line">    char num[10];</span><br><span class="line">    double score;</span><br><span class="line">&#125;stu[105];</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    int n,i;</span><br><span class="line">    double sum,aver;</span><br><span class="line">    <span class="keyword">while</span>(scanf(<span class="string">&quot;%d&quot;</span>,&amp;n)!=-1)</span><br><span class="line">    &#123;</span><br><span class="line">        sum=0;</span><br><span class="line">        getchar();</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            scanf(<span class="string">&quot;%s %lf&quot;</span>,stu[i].num,&amp;stu[i].score);</span><br><span class="line">            sum+=stu[i].score;</span><br><span class="line">        &#125;</span><br><span class="line">        aver=sum/n;</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(stu[i].score&gt;aver)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%8s %.1lf\n&quot;</span>,stu[i].num,stu[i].score);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-
-  <title>Label</title>
-
-
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap" rel="stylesheet" />
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
-</head>
-
-<body class="sub_page">
-  <div class="hero_area">
-    <!-- header section strats -->
-    <header class="header_section">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
-           
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
-            <ul class="navbar-nav  ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">主页 <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html"> 关于 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="course.html"> 资源 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="event.html"> 事件 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">联系站长</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="login.html">登录</a>
-              </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
-              <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
-            </form>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <!-- end header section -->
-  </div>
-<!-- about section -->
-<section class="about_section layout_padding">
-  <div class="side_img">
-    
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="img_container">
-          <div class="img-box b1">
-            <img src="images/a-1.jpg" alt="" />
-          </div>
-          <div class="img-box b2">
-            <img src="images/a-2.jpg" alt="" />
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="detail-box">
-          <div class="heading_container">
-            <h3>
-              个人简介
-            </h3>
-            <p>
-              一段简单的个人简介：本人性别男，身高体重不详，重度拖延症患者，喜欢娱乐，喜欢运动，喜欢吃饭睡觉
-              比较佛系，只有当ddl来临时才会激发他的动力......
-            </p>
-            <a href="">
-              Read More
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- end about section -->
-
-  <!-- info section -->
-  <section class="info_section layout_padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="info_menu">
-            <h5>
-              QUICK LINKS
-            </h5>
-            <ul class="navbar-nav  ">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">主页 <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html"> 关于 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="course.html"> 资源 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="event.html"> 事件 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">联系站长</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="login.html">登录</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="info_course">
-            <h5>
-              NEFU
-            </h5>
-            <p>
-              东北林业大学（Northeast Forestry University），简称东北林大（NEFU） 
-              ，位于黑龙江省哈尔滨市，是一所以林科为优势、林业工程为特色的中华人民共和国教育部直属高校，
-              由教育部、国家林业局、黑龙江省人民政府三方共建，国家“世界一流学科建设高校”，国家“211工程”、“985工程优势学科创新平台”重点建设高校，
-              高水平行业特色大学优质资源共享联盟成员高校，“双一流”农科联盟成员高校 
-            </p>
-          </div>
-        </div>
-
-        <div class="col-md-5 offset-md-1">
-          <div class="info_news">
-            <h5>
-              Computer Science
-            </h5>
-            <div class="info_contact">
-              <!-- <a href="">
-                Location
-              </a> -->
-              <p>
-                计算机科学与技术（Computer Science and Technology）是国家一级学科，
-                下设信息安全、软件工程、计算机软件与理论、计算机系统结构、计算机应用技术、计算机技术等专业
-                主修大数据技术导论、数据采集与处理实践（Python）、Web前/后端开发、统计与数据分析、机器学习、
-                高级数据库系统、数据可视化、云计算技术、人工智能、自然语言处理、媒体大数据案例分析、网络空间安全、
-                计算机网络、数据结构、软件工程、操作系统等课程，以及大数据方向系列实验，
-                并完成程序设计、数据分析、机器学习、数据可视化、大数据综合应用实践、专业实训和毕业设计等多种实践环节。
-              </p>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end info section -->
-
-  <!-- footer section -->
-  <footer class="container-fluid footer_section">
-    <p>lbl~ All rights reserved.</p>
-  </footer>
-  <!-- footer section -->
-
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
-
-</body>
-
-</html>
+<h3 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h3><p>读入学生的信息：学号（8位整数,以2014开头即2014****）、姓名（20个字符，不包含空格）、学生类型（1位整数）和成绩（2位小数）。学生类型数据中，1表示普通学生，2表示体优生，3表示基地班学生，要求统计不及格的学生人数。不同类型的学生及格分数标准不同，对于普通学生，及格标准为60分，对于体优生，及格标准为50分，对于基地班学生，及格标准为65。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line">struct student&#123;</span><br><span class="line">    char num[10];</span><br><span class="line">    char name[20];</span><br><span class="line">    int <span class="built_in">type</span>;</span><br><span class="line">    double score;</span><br><span class="line">&#125;stu[105];</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    int n,i,num;</span><br><span class="line">    <span class="keyword">while</span>(scanf(<span class="string">&quot;%d&quot;</span>,&amp;n)!=-1)</span><br><span class="line">    &#123;</span><br><span class="line">        num=0;</span><br><span class="line">        getchar();</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            scanf(<span class="string">&quot;%s%s%d%lf&quot;</span>,stu[i].num,stu[i].name,&amp;stu[i].<span class="built_in">type</span>,&amp;stu[i].score);</span><br><span class="line">            <span class="keyword">if</span>(stu[i].<span class="built_in">type</span>==1 &amp;&amp; stu[i].score&lt;60) num++;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(stu[i].<span class="built_in">type</span>==2 &amp;&amp; stu[i].score&lt;50) num++;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(stu[i].<span class="built_in">type</span>==3 &amp;&amp; stu[i].score&lt;65) num++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,num);</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%s %s %d %.2lf\n&quot;</span>,stu[i].num,stu[i].name,stu[i].<span class="built_in">type</span>,stu[i].score);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h3><p>某校的惯例是在每学期的期末考试之后发放奖学金。发放的奖学金共有五种，获取的条件各自不同。现在给出若干学生的相关数据，请计算哪些同学获得的奖金总数最高（假设总有同学能满足获得奖学金的条件）。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line">struct student&#123;</span><br><span class="line">    char name[25];</span><br><span class="line">    int final;</span><br><span class="line">    int frombitch;</span><br><span class="line">    char tutor;</span><br><span class="line">    char fromwest;</span><br><span class="line">    int article;</span><br><span class="line">    int money;</span><br><span class="line">&#125;stu[105];</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    int n,sum,max;</span><br><span class="line">    <span class="keyword">while</span>(scanf(<span class="string">&quot;%d&quot;</span>,&amp;n)!=-1)</span><br><span class="line">    &#123;</span><br><span class="line">        int i;</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;105;i++) stu[i].money=0;</span><br><span class="line">        sum=0;</span><br><span class="line">        max=-1;</span><br><span class="line">        getchar();</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            scanf(<span class="string">&quot;%s %d %d %c %c %d&quot;</span>,stu[i].name,</span><br><span class="line">&amp;stu[i].final,&amp;stu[i].frombitch,&amp;stu[i].tutor,&amp;stu[i].fromwest,&amp;stu[i].article);</span><br><span class="line">            <span class="keyword">if</span>(stu[i].article&gt;=1 &amp;&amp; stu[i].final&gt;80) stu[i].money+=8000;</span><br><span class="line">            <span class="keyword">if</span>(stu[i].final&gt;85 &amp;&amp; stu[i].frombitch&gt;80) stu[i].money+=4000;</span><br><span class="line">            <span class="keyword">if</span>(stu[i].final&gt;90) stu[i].money+=2000;</span><br><span class="line">            <span class="keyword">if</span>(stu[i].fromwest==<span class="string">&#x27;Y&#x27;</span> &amp;&amp; stu[i].final&gt;85) stu[i].money+=1000;</span><br><span class="line">            <span class="keyword">if</span>(stu[i].tutor==<span class="string">&#x27;Y&#x27;</span> &amp;&amp; stu[i].frombitch&gt;80) stu[i].money+=850;</span><br><span class="line">            sum+=stu[i].money;</span><br><span class="line">            <span class="keyword">if</span>(stu[i].money&gt;max)</span><br><span class="line">            &#123;</span><br><span class="line">                max=stu[i].money;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(stu[i].money==max)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%s\n%d\n&quot;</span>,stu[i].name,stu[i].money);</span><br><span class="line">                <span class="built_in">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,sum);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h3><p>聪聪的班主任王老师最近有点忙，可是他又是一位非常细心的老师，每次考试成绩都有专门的东西来记录，学期结束的时候给每位学生算了加权之后，他都要“关心关心”成绩不好的学生，并在假期给他们补补功课。什么是成绩不好呢？在王老师眼里，成绩不好当然就是加权成绩不及格咯！如今王老师这么忙，正好看你成天写程序闲着没事儿，于是他想让聪明的你来帮他写个程序，把那些不及格的同学的名单打印给他。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line">struct student&#123;</span><br><span class="line">    char name[25];</span><br><span class="line">    char num[15];</span><br><span class="line">    double score;</span><br><span class="line">&#125;stu[105];</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    int n,i,failnum;</span><br><span class="line">    int a[105];</span><br><span class="line">    <span class="keyword">while</span>(scanf(<span class="string">&quot;%d&quot;</span>,&amp;n)!=-1)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;105;i++) a[i]=-1;</span><br><span class="line">        failnum=0;</span><br><span class="line">        getchar();</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            scanf(<span class="string">&quot;%s\n%s\n%lf&quot;</span>,stu[i].name,stu[i].num,&amp;stu[i].score);</span><br><span class="line">            <span class="keyword">if</span>(stu[i].score&lt;60)</span><br><span class="line">            &#123;</span><br><span class="line">                failnum++;</span><br><span class="line">                a[i]=i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(failnum==0) <span class="built_in">printf</span>(<span class="string">&quot;They are Great!!\n&quot;</span>);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,failnum);</span><br><span class="line">            <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(a[i]!=-1)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>,stu[i].name);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(a[i]!=-1)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>,stu[i].num);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(a[i]!=-1)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">&quot;%.2lf\n&quot;</span>,stu[i].score);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h3><p>从键盘输入一些学生的学号(int),姓名(char 20)和成绩(double)，请你找出成绩从高到低的前三名同学的学号和姓名！本题用结构体来实现，结构体定义如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line">struct student&#123;</span><br><span class="line">    char name[25];</span><br><span class="line">    char num[15];</span><br><span class="line">    double score;</span><br><span class="line">&#125;stu[105];</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    int n,i;</span><br><span class="line">    int max[5],maxl[5];</span><br><span class="line">    <span class="keyword">while</span>(scanf(<span class="string">&quot;%d&quot;</span>,&amp;n)!=-1)</span><br><span class="line">    &#123;</span><br><span class="line">        max[0]=max[1]=max[2]=-1;</span><br><span class="line">        getchar();</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            scanf(<span class="string">&quot;%s %s %lf&quot;</span>,stu[i].num,stu[i].name,&amp;stu[i].score);</span><br><span class="line">            <span class="keyword">if</span>(stu[i].score&gt;max[0])</span><br><span class="line">            &#123;</span><br><span class="line">                 max[0]=stu[i].score;</span><br><span class="line">                 maxl[0]=i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;n &amp;&amp; i!=maxl[0];i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(stu[i].score&gt;max[1])</span><br><span class="line">            &#123;</span><br><span class="line">                 max[1]=stu[i].score;</span><br><span class="line">                 maxl[1]=i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(i!=maxl[0] &amp;&amp; i!=maxl[1])</span><br><span class="line">            <span class="keyword">if</span>(stu[i].score&gt;max[2])</span><br><span class="line">            &#123;</span><br><span class="line">                 max[2]=stu[i].score;</span><br><span class="line">                 maxl[2]=i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;3;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%s %s\n&quot;</span>,stu[maxl[i]].num,stu[maxl[i]].name);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
 
 
@@ -381,7 +213,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://lbl1126.github.io/sources/about.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://lbl1126.github.io/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-6/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -393,6 +225,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-7/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          C 语言实验 7
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C 语言实验 5</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -452,7 +303,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

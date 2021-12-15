@@ -6,22 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lbl1126.github.io">
-  <title>lubolin</title>
+  <title>C 语言实验 7 | lubolin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Label">
-<meta property="og:type" content="website">
-<meta property="og:title" content="lubolin">
-<meta property="og:url" content="https://lbl1126.github.io/sources/about.html">
+  <meta name="description" content="C语言 锐格实验六.动态数组1.约瑟夫环：有n个人,围成一个环，编号为 0、1、2、3、、、n-1，从第一个人开始循环报数，假设数到m的那个人出列，然后从下一个人继续数数，再数到m出列，以此循环，最后那个人为胜利者，求胜利者的编号。输入数据有多组，每组为n与m；每组数据单独1行输出,直接输出数组编号，不用+1处理； 12345678910111213141516171819202122232425">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C 语言实验 7">
+<meta property="og:url" content="https://lbl1126.github.io/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-7/index.html">
 <meta property="og:site_name" content="lubolin">
-<meta property="og:description" content="Label">
+<meta property="og:description" content="C语言 锐格实验六.动态数组1.约瑟夫环：有n个人,围成一个环，编号为 0、1、2、3、、、n-1，从第一个人开始循环报数，假设数到m的那个人出列，然后从下一个人继续数数，再数到m出列，以此循环，最后那个人为胜利者，求胜利者的编号。输入数据有多组，每组为n与m；每组数据单独1行输出,直接输出数组编号，不用+1处理； 12345678910111213141516171819202122232425">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://lbl1126.github.io/sources/images/a-1.jpg">
-<meta property="og:image" content="https://lbl1126.github.io/sources/images/a-2.jpg">
-<meta property="article:published_time" content="2021-12-13T02:27:20.498Z">
-<meta property="article:modified_time" content="2021-12-13T02:27:20.498Z">
+<meta property="article:published_time" content="2021-12-15T11:28:28.000Z">
+<meta property="article:modified_time" content="2021-12-15T11:51:40.762Z">
 <meta property="article:author" content="lubolin">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://lbl1126.github.io/sources/images/a-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="lubolin" type="application/atom+xml">
   
@@ -125,204 +122,35 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-C-语言实验-7" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      C 语言实验 7
+    </h1>
+  
+
+        
+        <a href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-7/" class="archive-article-date">
+  	<time datetime="2021-12-15T11:28:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-15</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
+        <h3 id="C语言-锐格实验"><a href="#C语言-锐格实验" class="headerlink" title="C语言 锐格实验"></a>C语言 锐格实验</h3><h5 id="六-动态数组"><a href="#六-动态数组" class="headerlink" title="六.动态数组"></a>六.动态数组</h5><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><p>约瑟夫环：<br>有n个人,围成一个环，编号为 0、1、2、3、、、n-1，从第一个人开始循环报数，假设数到m的那个人出列，然后从下一个人继续数数，再数到m出列，以此循环，最后那个人为胜利者，求胜利者的编号。<br>输入数据有多组，每组为n与m；每组数据单独1行输出,直接输出数组编号，不用+1处理；</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line"></span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    int n,m;</span><br><span class="line">    int *p;</span><br><span class="line">    int i;</span><br><span class="line">    int count;</span><br><span class="line">    int num;</span><br><span class="line">    <span class="keyword">while</span>(scanf(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;m)!=-1)</span><br><span class="line">    &#123;</span><br><span class="line">        num=0;</span><br><span class="line">        count=0;</span><br><span class="line">        p=(int *)calloc(n,sizeof(int));</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">            *(p+i)=-1;</span><br><span class="line">        <span class="keyword">while</span>(num!=n-1)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(*(p+i)!=0) count++;</span><br><span class="line">                <span class="keyword">if</span>(count==m)</span><br><span class="line">                &#123;</span><br><span class="line">                    *(p+i)=0;</span><br><span class="line">                    num++;</span><br><span class="line">                    count=0;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(num==n-1) <span class="built_in">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(*(p+i)==-1) <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,i);</span><br><span class="line">        &#125;</span><br><span class="line">        free(p);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h3><p>求n个串中最长串：给定n个字符串，每个串长度小于100，求其中最长的字符串。输入数据有多组，每组构成形式如输入示例，输出该组字符串中最长的字符串，单独1行输出。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;string.h&gt;</span></span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    int n,i,len,li,maxlen;</span><br><span class="line">    char (*p)[100];</span><br><span class="line">    <span class="keyword">while</span>(scanf(<span class="string">&quot;%d&quot;</span>,&amp;n)!=-1)</span><br><span class="line">    &#123;</span><br><span class="line">        getchar();getchar();</span><br><span class="line">        p=(char (*)[100])calloc(n,sizeof(char[100]));</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            gets((p+i));</span><br><span class="line">            len=strlen((p+i));</span><br><span class="line">            <span class="keyword">if</span>(i==0)</span><br><span class="line">            &#123;</span><br><span class="line">                maxlen=len;</span><br><span class="line">                li=0;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(len&gt;maxlen)</span><br><span class="line">            &#123;</span><br><span class="line">                maxlen=len;</span><br><span class="line">                li=i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%s\n&quot;</span>,(p+li));</span><br><span class="line">        free(p);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h3><p>求平面中n个点之间最短线段长度：给定平面中n个点的坐标(x,y),求这个n个点之间最短连线距离。输入数据有多组，每组构成形式如输入示例，输出该组数据中最短边的距离长度，保留1位小数，单独1行输出。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;math.h&gt;</span></span><br><span class="line">struct axis&#123;</span><br><span class="line">    double x;</span><br><span class="line">    double y;</span><br><span class="line">&#125;;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    int n,i,j;</span><br><span class="line">    struct axis *p;</span><br><span class="line">    double min,tmp;</span><br><span class="line">    double x1,y1,x2,y2;</span><br><span class="line">    <span class="keyword">while</span>(scanf(<span class="string">&quot;%d&quot;</span>,&amp;n)!=-1)</span><br><span class="line">    &#123;</span><br><span class="line">        min=999.0;</span><br><span class="line">        p=(struct axis *)calloc(n,sizeof(struct axis));</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;n;i++) scanf(<span class="string">&quot;%lf %lf&quot;</span>,&amp;(p+i)-&gt;x,&amp;(p+i)-&gt;y);</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;n-1;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(j=i+1;j&lt;n;j++)</span><br><span class="line">            &#123;</span><br><span class="line">                x1=(p+i)-&gt;x;</span><br><span class="line">                y1=(p+i)-&gt;y;</span><br><span class="line">                x2=(p+j)-&gt;x;</span><br><span class="line">                y2=(p+j)-&gt;y;</span><br><span class="line">                tmp=(x1-x2)*(x1-x2)+(y1-y2)*(y1-y2);</span><br><span class="line">                <span class="keyword">if</span>(tmp&lt;min) min=tmp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%.1lf\n&quot;</span>,sqrt(min));</span><br><span class="line">        free(p);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h3><p>段落单词分解：给出一个段落，字符数小于1000，求单词及个数。数据输入为1组，输出单词个与单词，每个单词单独1行输出，格式见示例。</p>
+<p><code>bash #include &lt;stdio.h&gt; #include &lt;stdlib.h&gt; #include &lt;string.h&gt; int main() &#123;     int i,j,num,flag,wordl,wordnum;     char a[1005];     char word[1005][80];     gets(a);     int l=strlen(a);     a[l]=&#39; &#39;;     a[l+1]=&#39;\0&#39;;     wordnum=0;     wordl=0;     flag=0;     num=0;     for(i=0;a[i]!=&#39;\0&#39;;i++)     &#123;         if(a[i]!=&#39; &#39;) flag=1;         else         &#123;              if(flag==1)              &#123;                  wordnum++;                  num++;                  wordl=0;              &#125;              flag=0;         &#125;         if(flag==1)         &#123;             word[wordnum][wordl++]=a[i];         &#125;     &#125;     printf(&quot;%d\n&quot;,num);     for(i=0;i&lt;num;i++)     &#123;         printf(&quot;%s\n&quot;,word[i]);     &#125; &#125;</code></p>
 
-<head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-
-  <title>Label</title>
-
-
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap" rel="stylesheet" />
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
-</head>
-
-<body class="sub_page">
-  <div class="hero_area">
-    <!-- header section strats -->
-    <header class="header_section">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
-           
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
-            <ul class="navbar-nav  ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">主页 <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html"> 关于 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="course.html"> 资源 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="event.html"> 事件 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">联系站长</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="login.html">登录</a>
-              </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
-              <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
-            </form>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <!-- end header section -->
-  </div>
-<!-- about section -->
-<section class="about_section layout_padding">
-  <div class="side_img">
-    
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="img_container">
-          <div class="img-box b1">
-            <img src="images/a-1.jpg" alt="" />
-          </div>
-          <div class="img-box b2">
-            <img src="images/a-2.jpg" alt="" />
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="detail-box">
-          <div class="heading_container">
-            <h3>
-              个人简介
-            </h3>
-            <p>
-              一段简单的个人简介：本人性别男，身高体重不详，重度拖延症患者，喜欢娱乐，喜欢运动，喜欢吃饭睡觉
-              比较佛系，只有当ddl来临时才会激发他的动力......
-            </p>
-            <a href="">
-              Read More
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- end about section -->
-
-  <!-- info section -->
-  <section class="info_section layout_padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="info_menu">
-            <h5>
-              QUICK LINKS
-            </h5>
-            <ul class="navbar-nav  ">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">主页 <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html"> 关于 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="course.html"> 资源 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="event.html"> 事件 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">联系站长</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="login.html">登录</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="info_course">
-            <h5>
-              NEFU
-            </h5>
-            <p>
-              东北林业大学（Northeast Forestry University），简称东北林大（NEFU） 
-              ，位于黑龙江省哈尔滨市，是一所以林科为优势、林业工程为特色的中华人民共和国教育部直属高校，
-              由教育部、国家林业局、黑龙江省人民政府三方共建，国家“世界一流学科建设高校”，国家“211工程”、“985工程优势学科创新平台”重点建设高校，
-              高水平行业特色大学优质资源共享联盟成员高校，“双一流”农科联盟成员高校 
-            </p>
-          </div>
-        </div>
-
-        <div class="col-md-5 offset-md-1">
-          <div class="info_news">
-            <h5>
-              Computer Science
-            </h5>
-            <div class="info_contact">
-              <!-- <a href="">
-                Location
-              </a> -->
-              <p>
-                计算机科学与技术（Computer Science and Technology）是国家一级学科，
-                下设信息安全、软件工程、计算机软件与理论、计算机系统结构、计算机应用技术、计算机技术等专业
-                主修大数据技术导论、数据采集与处理实践（Python）、Web前/后端开发、统计与数据分析、机器学习、
-                高级数据库系统、数据可视化、云计算技术、人工智能、自然语言处理、媒体大数据案例分析、网络空间安全、
-                计算机网络、数据结构、软件工程、操作系统等课程，以及大数据方向系列实验，
-                并完成程序设计、数据分析、机器学习、数据可视化、大数据综合应用实践、专业实训和毕业设计等多种实践环节。
-              </p>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end info section -->
-
-  <!-- footer section -->
-  <footer class="container-fluid footer_section">
-    <p>lbl~ All rights reserved.</p>
-  </footer>
-  <!-- footer section -->
-
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
-
-</body>
-
-</html>
       
 
 
@@ -381,7 +209,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://lbl1126.github.io/sources/about.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://lbl1126.github.io/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-7/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -393,6 +221,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-8/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          C 语言实验 8
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-6/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C  语言实验 6</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -452,7 +299,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

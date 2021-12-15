@@ -6,22 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lbl1126.github.io">
-  <title>lubolin</title>
+  <title>C 语言实验 3 | lubolin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Label">
-<meta property="og:type" content="website">
-<meta property="og:title" content="lubolin">
-<meta property="og:url" content="https://lbl1126.github.io/sources/about.html">
+  <meta name="description" content="C语言 锐格实验三.指针与数组1.请将输入的三个整数按照从小到大的顺序输出。整数的范围从。输入数据有多组，每组输入三个整型数据，采用指针编程实现将三个数从小到大排序，排序后输出。要求排序部分用自定义函数实现。 123456789101112131415161718192021222324252627282930313233343536#include &lt;stdio.h&gt;#include">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C 语言实验 3">
+<meta property="og:url" content="https://lbl1126.github.io/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-3/index.html">
 <meta property="og:site_name" content="lubolin">
-<meta property="og:description" content="Label">
+<meta property="og:description" content="C语言 锐格实验三.指针与数组1.请将输入的三个整数按照从小到大的顺序输出。整数的范围从。输入数据有多组，每组输入三个整型数据，采用指针编程实现将三个数从小到大排序，排序后输出。要求排序部分用自定义函数实现。 123456789101112131415161718192021222324252627282930313233343536#include &lt;stdio.h&gt;#include">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://lbl1126.github.io/sources/images/a-1.jpg">
-<meta property="og:image" content="https://lbl1126.github.io/sources/images/a-2.jpg">
-<meta property="article:published_time" content="2021-12-13T02:27:20.498Z">
-<meta property="article:modified_time" content="2021-12-13T02:27:20.498Z">
+<meta property="article:published_time" content="2021-12-15T11:02:20.000Z">
+<meta property="article:modified_time" content="2021-12-15T11:50:00.058Z">
 <meta property="article:author" content="lubolin">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://lbl1126.github.io/sources/images/a-1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="lubolin" type="application/atom+xml">
   
@@ -125,204 +122,45 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-C-语言实验-3" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      C 语言实验 3
+    </h1>
+  
+
+        
+        <a href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-3/" class="archive-article-date">
+  	<time datetime="2021-12-15T11:02:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-15</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
+        <h3 id="C语言-锐格实验"><a href="#C语言-锐格实验" class="headerlink" title="C语言 锐格实验"></a>C语言 锐格实验</h3><h5 id="三-指针与数组"><a href="#三-指针与数组" class="headerlink" title="三.指针与数组"></a>三.指针与数组</h5><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><p>请将输入的三个整数按照从小到大的顺序输出。整数的范围从。输入数据有多组，每组输入三个整型数据，采用指针编程实现将三个数从小到大排序，排序后输出。要求排序部分用自定义函数实现。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;string.h&gt;</span></span><br><span class="line">int swap(int *x,int *y,int *z);</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    int a,b,c;</span><br><span class="line">    <span class="keyword">while</span>(scanf(<span class="string">&quot;%d %d %d&quot;</span>,&amp;a,&amp;b,&amp;c)!=-1)</span><br><span class="line">    &#123;</span><br><span class="line">        swap(&amp;a,&amp;b,&amp;c);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d %d %d\n&quot;</span>,a,b,c);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">int swap(int *x,int *y,int *z)</span><br><span class="line">&#123;</span><br><span class="line">    int t;</span><br><span class="line">    <span class="keyword">if</span>(*x &gt; *y)</span><br><span class="line">    &#123;</span><br><span class="line">        t=*x;</span><br><span class="line">        *x=*y;</span><br><span class="line">        *y=t;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(*x&gt;*z)</span><br><span class="line">    &#123;</span><br><span class="line">        t=*x;</span><br><span class="line">        *x=*z;</span><br><span class="line">        *z=t;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(*y&gt;*z)</span><br><span class="line">    &#123;</span><br><span class="line">        t=*y;</span><br><span class="line">        *y=*z;</span><br><span class="line">        *z=t;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
+<h3 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h3><p>利用指针完成对一个数组中大于指定数据的过滤，并将过滤后的数据存储并输出。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;string.h&gt;</span></span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    int n,x,i,num;</span><br><span class="line">    int a[200],b[200];</span><br><span class="line">    <span class="keyword">while</span>(scanf(<span class="string">&quot;%d %d&quot;</span>,&amp;n,&amp;x)!=-1)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;n;i++) scanf(<span class="string">&quot;%d&quot;</span>,a+i);</span><br><span class="line">        num=save(a,n,x,b);</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;num;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,b[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">int save(int *a,int n,int x,int *b)</span><br><span class="line">&#123;</span><br><span class="line">    int j=0,k=0;</span><br><span class="line">    <span class="keyword">for</span>(j;j&lt;n;j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(a[j]&gt;=x)</span><br><span class="line">            b[k++] = a[j];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">return</span> k;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-  <title>Label</title>
+<h3 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h3><p>程序完成对输入的整数，是否在符合要求的范围内的检查功能。如果在规定的次数内输入了符合要求的数据，函数返回，在规定的次数内输入的数据均不在符合要求的范围内，函数返回0。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;string.h&gt;</span></span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    int n,min,max,t,i;</span><br><span class="line">    <span class="keyword">while</span>(scanf(<span class="string">&quot;%d %d %d&quot;</span>,&amp;n,&amp;min,&amp;max)!=-1)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            scanf(<span class="string">&quot;%d&quot;</span>,&amp;t);</span><br><span class="line">            <span class="keyword">if</span>(t&gt;=min &amp;&amp; t&lt;=max)</span><br><span class="line">            &#123;</span><br><span class="line">                 <span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>,1,t);</span><br><span class="line">                 <span class="built_in">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(i==n-1)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>,0,t);</span><br><span class="line">                    <span class="built_in">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="built_in">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h3><p>本题利用指针完成将一个数字字符串转换为int整数的程序。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;string.h&gt;</span></span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    int i;</span><br><span class="line">    char a[100];</span><br><span class="line">    <span class="keyword">while</span>(gets(a))</span><br><span class="line">    &#123;</span><br><span class="line">        int l=strlen(a);</span><br><span class="line">        <span class="keyword">if</span>(a[1]&lt;<span class="string">&#x27;0&#x27;</span> || a[1]&gt;<span class="string">&#x27;9&#x27;</span>)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,0);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(i=0;i&lt;l;i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(i==0)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span>(a[0]==<span class="string">&#x27;+&#x27;</span>) <span class="built_in">continue</span>;</span><br><span class="line">                    <span class="keyword">else</span> <span class="keyword">if</span>(a[0] == <span class="string">&#x27;-&#x27;</span>) <span class="built_in">printf</span>(<span class="string">&quot;-&quot;</span>);</span><br><span class="line">                    <span class="keyword">else</span> <span class="keyword">if</span>(a[0]&gt;=<span class="string">&#x27;0&#x27;</span> &amp;&amp; a[0]&lt;=<span class="string">&#x27;9&#x27;</span>) <span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,a[0]);</span><br><span class="line">                    <span class="keyword">else</span> <span class="keyword">if</span>(a[0]==<span class="string">&#x27; &#x27;</span>) <span class="built_in">continue</span>;</span><br><span class="line">                    <span class="keyword">else</span></span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,0);</span><br><span class="line">                        <span class="built_in">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span>(a[i]&gt;=<span class="string">&#x27;0&#x27;</span> &amp;&amp; a[i]&lt;=<span class="string">&#x27;9&#x27;</span>) <span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>,a[i]);</span><br><span class="line">                    <span class="keyword">else</span></span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="built_in">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(l==1)</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">                    <span class="built_in">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h3><p>本题用指针完成在一个已经排好序的数组中，插入一个新数据，插入过程不改变原有的顺序，插入后的数组依然是排好顺序的。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;string.h&gt;</span></span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    int n,i,flag;</span><br><span class="line">    double a[100],t,tmp;</span><br><span class="line">    <span class="keyword">while</span>(scanf(<span class="string">&quot;%d&quot;</span>,&amp;n)!=-1)</span><br><span class="line">    &#123;</span><br><span class="line">        flag=0;</span><br><span class="line">        scanf(<span class="string">&quot;%lf&quot;</span>,&amp;t);</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            scanf(<span class="string">&quot;%lf&quot;</span>,a+i);</span><br><span class="line">            <span class="keyword">if</span>(a[i]&gt;t &amp;&amp; flag==0)</span><br><span class="line">            &#123;</span><br><span class="line">                tmp=a[i];</span><br><span class="line">                a[i]=t;</span><br><span class="line">                a[i+1]=tmp;</span><br><span class="line">                i++;</span><br><span class="line">                n++;</span><br><span class="line">                flag=1;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%.2lf &quot;</span>,*(a+i));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="6"><a href="#6" class="headerlink" title="6."></a>6.</h3><p>用指针完成一个双精度矩阵最大值的查找及输出。矩阵是一个不超过十行十列的实数矩阵。请分别编写矩阵输入函数、矩阵中最大值及其位置查找两个自定义函数求解。在这两个函数中，矩阵元素的遍历查找和赋值通过指针实现。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line">void <span class="keyword">in</span>(int n,int m);</span><br><span class="line">double a[15][15];</span><br><span class="line">double max;</span><br><span class="line">int maxi,maxj;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    int n,m;</span><br><span class="line">    <span class="keyword">while</span>(scanf(<span class="string">&quot;%d %d&quot;</span>,&amp;n,&amp;m)!=-1)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">in</span>(n,m);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%.2lf %d %d\n&quot;</span>,max,maxi+1,maxj+1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">void <span class="keyword">in</span>(int n,int m)</span><br><span class="line">&#123;</span><br><span class="line">    int i,j;</span><br><span class="line">    max=-1;</span><br><span class="line">    maxi=maxj=0;</span><br><span class="line">    <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(j=0;j&lt;m;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            scanf(<span class="string">&quot;%lf&quot;</span>,(*(a+i))+j);</span><br><span class="line">            <span class="keyword">if</span>(a[i][j]&gt;max)&#123;</span><br><span class="line">                 max=a[i][j];</span><br><span class="line">                 maxi=i;</span><br><span class="line">                 maxj=j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap" rel="stylesheet" />
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
-</head>
+<h3 id="7"><a href="#7" class="headerlink" title="7."></a>7.</h3><p>编程实现在一个字符串中取出一部分字符的功能。取出的字符组成一个新字符串。</p>
+<p><code>bash #include &lt;stdio.h&gt; #include &lt;stdlib.h&gt; char a[105],b[105]; int n,m; int main() &#123;     while(scanf(&quot;%s&quot;,a)!=-1)     &#123;         scanf(&quot;%d %d&quot;,&amp;n,&amp;m);         select(n,m);         printf(&quot;%s\n&quot;,b);     &#125; &#125; void select(int n,int m) &#123;     int i,j=0;     for(i=n-1;i&lt;m;i++)     &#123;         b[j++]=a[i];     &#125;     b[j]=&#39;\0&#39;; &#125;</code></p>
 
-<body class="sub_page">
-  <div class="hero_area">
-    <!-- header section strats -->
-    <header class="header_section">
-      <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg custom_nav-container ">
-          <a class="navbar-brand" href="index.html">
-           
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
-            <ul class="navbar-nav  ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">主页 <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html"> 关于 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="course.html"> 资源 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="event.html"> 事件 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">联系站长</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="login.html">登录</a>
-              </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
-              <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
-            </form>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <!-- end header section -->
-  </div>
-<!-- about section -->
-<section class="about_section layout_padding">
-  <div class="side_img">
-    
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="img_container">
-          <div class="img-box b1">
-            <img src="images/a-1.jpg" alt="" />
-          </div>
-          <div class="img-box b2">
-            <img src="images/a-2.jpg" alt="" />
-          </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="detail-box">
-          <div class="heading_container">
-            <h3>
-              个人简介
-            </h3>
-            <p>
-              一段简单的个人简介：本人性别男，身高体重不详，重度拖延症患者，喜欢娱乐，喜欢运动，喜欢吃饭睡觉
-              比较佛系，只有当ddl来临时才会激发他的动力......
-            </p>
-            <a href="">
-              Read More
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- end about section -->
-
-  <!-- info section -->
-  <section class="info_section layout_padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="info_menu">
-            <h5>
-              QUICK LINKS
-            </h5>
-            <ul class="navbar-nav  ">
-              <li class="nav-item active">
-                <a class="nav-link" href="index.html">主页 <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html"> 关于 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="course.html"> 资源 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="event.html"> 事件 </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">联系站长</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="login.html">登录</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="info_course">
-            <h5>
-              NEFU
-            </h5>
-            <p>
-              东北林业大学（Northeast Forestry University），简称东北林大（NEFU） 
-              ，位于黑龙江省哈尔滨市，是一所以林科为优势、林业工程为特色的中华人民共和国教育部直属高校，
-              由教育部、国家林业局、黑龙江省人民政府三方共建，国家“世界一流学科建设高校”，国家“211工程”、“985工程优势学科创新平台”重点建设高校，
-              高水平行业特色大学优质资源共享联盟成员高校，“双一流”农科联盟成员高校 
-            </p>
-          </div>
-        </div>
-
-        <div class="col-md-5 offset-md-1">
-          <div class="info_news">
-            <h5>
-              Computer Science
-            </h5>
-            <div class="info_contact">
-              <!-- <a href="">
-                Location
-              </a> -->
-              <p>
-                计算机科学与技术（Computer Science and Technology）是国家一级学科，
-                下设信息安全、软件工程、计算机软件与理论、计算机系统结构、计算机应用技术、计算机技术等专业
-                主修大数据技术导论、数据采集与处理实践（Python）、Web前/后端开发、统计与数据分析、机器学习、
-                高级数据库系统、数据可视化、云计算技术、人工智能、自然语言处理、媒体大数据案例分析、网络空间安全、
-                计算机网络、数据结构、软件工程、操作系统等课程，以及大数据方向系列实验，
-                并完成程序设计、数据分析、机器学习、数据可视化、大数据综合应用实践、专业实训和毕业设计等多种实践环节。
-              </p>
-            </div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end info section -->
-
-  <!-- footer section -->
-  <footer class="container-fluid footer_section">
-    <p>lbl~ All rights reserved.</p>
-  </footer>
-  <!-- footer section -->
-
-  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
-  <script type="text/javascript" src="js/bootstrap.js"></script>
-
-</body>
-
-</html>
       
 
 
@@ -381,7 +219,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://lbl1126.github.io/sources/about.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://lbl1126.github.io/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-3/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -393,6 +231,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          C 语言实验 4
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">C 语言实验 2</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -452,7 +309,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
