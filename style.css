@@ -62,7 +62,7 @@
 #local-search-result a.search-result-title {
   line-height: 1.2;
   font-weight: bold;
-  color: #f04400;
+  color: #1c2fda;
 }
 
 /*搜索预览段落*/
@@ -72,12 +72,12 @@
   max-height: 3.6em;
   overflow: hidden;
   text-align: justify;
-  color: #fff;
+  color: rgb(0, 0, 0);
 }
 
 /*匹配的关键词*/
 #local-search-result em.search-keyword {
-  color: #f58e90;
+  color: #ff0000;
 }
 
 /*无匹配搜索结果时显示*/
