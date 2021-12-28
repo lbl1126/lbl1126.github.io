@@ -169,6 +169,177 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-C-语言实验-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-2/">C 语言实验 2</a>
+    </h1>
+  
+
+        
+        <a href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-2/" class="archive-article-date">
+  	<time datetime="2021-12-15T10:56:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="C语言-锐格实验"><a href="#C语言-锐格实验" class="headerlink" title="C语言 锐格实验"></a>C语言 锐格实验</h3><h4 id="二-多维数组"><a href="#二-多维数组" class="headerlink" title="二.多维数组"></a>二.多维数组</h4><h4 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h4><p>七段显示器输出。计算器、电子手表和其它电子设备经常依靠七段显示器进行数值的输出。为了组成数字，这些设备需要“打开”7个显示段中的某些部分，同时“关闭”其它部分。假设需要设置一个数组来记住显示每个数字时需要“打开”的显示段。试编写一个程序，将输入进来的一位十进制数字转换成对应的显示段二进制编码，并实现显示码输出。各显示段的标号如下所示：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">   int max_save[10][7]=&#123;&#123;1,1,1,1,1,1,0&#125;,</span><br><span class="line">                        &#123;0,1,1,0,0,0,0&#125;,</span><br><span class="line">                        &#123;1,1,0,1,1,0,1&#125;,</span><br><span class="line">                        &#123;1,1,1,1,0,0,1&#125;,</span><br><span class="line">                        &#123;0,1,1,0,0,1,1&#125;,</span><br><span class="line">                        &#123;1,0,1,1,0,1,1&#125;,</span><br><span class="line">                        &#123;1,0,1,1,1,1,1&#125;,</span><br><span class="line">                        &#123;1,1,1,0,0,0,0&#125;,</span><br><span class="line">                        &#123;1,1,1,1,1,1,1&#125;,</span><br><span class="line">                        &#123;1,1,1,1,0,1,1&#125;&#125;;</span><br><span class="line">   int num,col;</span><br><span class="line">   scanf(<span class="string">&quot;%d&quot;</span>,&amp;num);</span><br><span class="line">   /*模拟七段数码显示管分5行输出，</span><br><span class="line">    *奇数行只输出空格或者-,</span><br><span class="line">    *偶数行只输出空格或者|。*/</span><br><span class="line">   //start</span><br><span class="line">       <span class="keyword">if</span>(max_save[num][0]==1) <span class="built_in">printf</span>(<span class="string">&quot; - \n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;   \n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(max_save[num][5]==1 &amp;&amp; max_save[num][1]==1) <span class="built_in">printf</span>(<span class="string">&quot;| |\n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(max_save[num][5]==1) <span class="built_in">printf</span>(<span class="string">&quot;|  \n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(max_save[num][1]==1) <span class="built_in">printf</span>(<span class="string">&quot;  |\n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;   \n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(max_save[num][6]==1) <span class="built_in">printf</span>(<span class="string">&quot; - \n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;   \n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(max_save[num][4]==1 &amp;&amp; max_save[num][2]==1) <span class="built_in">printf</span>(<span class="string">&quot;| |\n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(max_save[num][4]==1) <span class="built_in">printf</span>(<span class="string">&quot;|  \n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(max_save[num][2]==1) <span class="built_in">printf</span>(<span class="string">&quot;  |\n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;   \n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(max_save[num][3]==1) <span class="built_in">printf</span>(<span class="string">&quot; - \n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;   \n&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   //end</span><br><span class="line">   <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-2/#more">more >></a>
+        
+      
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">锐格</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-C-语言实验-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-1/">C 语言实验 1</a>
+    </h1>
+  
+
+        
+        <a href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-1/" class="archive-article-date">
+  	<time datetime="2021-12-15T10:44:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="C语言-锐格实验"><a href="#C语言-锐格实验" class="headerlink" title="C语言 锐格实验"></a>C语言 锐格实验</h3><h5 id="一-字符串"><a href="#一-字符串" class="headerlink" title="一.字符串"></a>一.字符串</h5><h6 id="1-大写变小写。读一个字符串（长度-lt-10），将其中出现的大写字母统统变成小写字母，此后输出改变后的字符串"><a href="#1-大写变小写。读一个字符串（长度-lt-10），将其中出现的大写字母统统变成小写字母，此后输出改变后的字符串" class="headerlink" title="1.大写变小写。读一个字符串（长度&lt;10），将其中出现的大写字母统统变成小写字母，此后输出改变后的字符串"></a>1.大写变小写。读一个字符串（长度&lt;10），将其中出现的大写字母统统变成小写字母，此后输出改变后的字符串</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line"><span class="comment">#define LEN 10</span></span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">   char array[LEN];</span><br><span class="line">   int i;</span><br><span class="line">   gets(array);</span><br><span class="line">   i=0;</span><br><span class="line">   <span class="keyword">while</span>(array[i]!=<span class="string">&#x27;\0&#x27;</span>)</span><br><span class="line">   &#123;</span><br><span class="line">      //start</span><br><span class="line">            <span class="keyword">if</span>(array[i]&gt;=<span class="string">&#x27;A&#x27;</span> &amp;&amp; array[i]&lt;=<span class="string">&#x27;Z&#x27;</span>)</span><br><span class="line">      &#123;</span><br><span class="line">          array[i]+=32;</span><br><span class="line">      &#125;</span><br><span class="line">      i++;</span><br><span class="line">      //end</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>,array);</span><br><span class="line">   <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-1/#more">more >></a>
+        
+      
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">锐格</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-关于登录和注册板块。。。" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

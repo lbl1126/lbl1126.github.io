@@ -169,6 +169,310 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Java-Optional操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/12/28/Java-Optional%E6%93%8D%E4%BD%9C/">Java Optional操作</a>
+    </h1>
+  
+
+        
+        <a href="/2021/12/28/Java-Optional%E6%93%8D%E4%BD%9C/" class="archive-article-date">
+  	<time datetime="2021-12-28T14:03:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Optional操作"><a href="#Optional操作" class="headerlink" title="Optional操作"></a>Optional操作</h4><p>在com.experiment05.entity下，创建Student/Teacher/College类，代码如下；<br>在com.experiment05.resource下，创建DatabaseUtils类，代码如下；<br>基于Optional，按需求实现测试类Test中的方法，模拟正确/错误数据信息验证代码的有效性</p>
+<h4 id="com-experiment05"><a href="#com-experiment05" class="headerlink" title="com.experiment05"></a>com.experiment05</h4><h4 id="Test-java"><a href="#Test-java" class="headerlink" title="Test.java"></a>Test.java</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">package com.experiment05;</span><br><span class="line">import com.experiment05.entity.College;</span><br><span class="line">import com.experiment05.entity.Student;</span><br><span class="line">import com.experiment05.entity.Teacher;</span><br><span class="line">import com.experiment05.resource.DatabaseUtils;</span><br><span class="line"></span><br><span class="line">import java.util.List;</span><br><span class="line">import java.util.Optional;</span><br><span class="line">import java.util.stream.Collectors;</span><br><span class="line">import java.util.stream.Stream;</span><br><span class="line"></span><br><span class="line">public class Test &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        System.out.println(getCollegeName(DatabaseUtils.getStudents(),8888));</span><br><span class="line">        </span><br><span class="line">        System.out.print(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">        </span><br><span class="line">        printCollegeName(DatabaseUtils.getStudents(), 201001, 1001);</span><br><span class="line">    	</span><br><span class="line">    	</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"></span><br><span class="line"> * author lubolin</span><br><span class="line"> */</span><br><span class="line">private static String getCollegeName(List&lt;Student&gt; students, int sNumber) &#123;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	<span class="built_in">return</span>  students.stream()</span><br><span class="line">            .filter(a -&gt; a.getNum() == sNumber)</span><br><span class="line">            .collect(Collectors.toList())</span><br><span class="line">            .stream()</span><br><span class="line">            .findFirst()</span><br><span class="line">            .map(Student::getT)</span><br><span class="line">            .map(Teacher::getC)</span><br><span class="line">            .map(College::getName)</span><br><span class="line">            .orElse(<span class="string">&quot;************&quot;</span>);</span><br><span class="line">	 </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"></span><br><span class="line"> * </span><br><span class="line"> *  * author lubolin</span><br><span class="line"> */</span><br><span class="line">private static void printCollegeName(List&lt;Student&gt; students, int sNumber, int tNumber) &#123;</span><br><span class="line">	System.out.println(students.stream()</span><br><span class="line">            .filter(a -&gt; a.getNum() == sNumber)</span><br><span class="line">            .collect(Collectors.toList())</span><br><span class="line">            .stream()</span><br><span class="line">            .findFirst()</span><br><span class="line">            .map(Student::getT)</span><br><span class="line">            .filter(a -&gt; a.getI() == tNumber)</span><br><span class="line">            .map(Teacher::getC)</span><br><span class="line">            .map(College::getName)</span><br><span class="line">            .orElse(<span class="string">&quot;*************&quot;</span>));</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="com-experiment05-entity"><a href="#com-experiment05-entity" class="headerlink" title="com.experiment05.entity"></a>com.experiment05.entity</h4><h4 id="college-java"><a href="#college-java" class="headerlink" title="college.java"></a>college.java</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">package com.experiment05.entity;</span><br><span class="line"></span><br><span class="line">public class College &#123;</span><br><span class="line">    String name;</span><br><span class="line">    </span><br><span class="line">	public String <span class="function"><span class="title">getName</span></span>() &#123;</span><br><span class="line">		<span class="built_in">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setName(String name) &#123;</span><br><span class="line">		this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public College(String string) &#123;</span><br><span class="line">		this.name=string;</span><br><span class="line">		// TODO Auto-generated constructor stub</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="com-experiment05-entity-1"><a href="#com-experiment05-entity-1" class="headerlink" title="com.experiment05.entity"></a>com.experiment05.entity</h4><h4 id="student-java"><a href="#student-java" class="headerlink" title="student.java"></a>student.java</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">package com.experiment05.entity;</span><br><span class="line"></span><br><span class="line">public class Student &#123;</span><br><span class="line"></span><br><span class="line">	int num;</span><br><span class="line">	String name;</span><br><span class="line">	int grade;</span><br><span class="line">	Teacher t;</span><br><span class="line">	</span><br><span class="line">	public int <span class="function"><span class="title">getNum</span></span>() &#123;</span><br><span class="line">		<span class="built_in">return</span> num;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setNum(int num) &#123;</span><br><span class="line">		this.num = num;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public String <span class="function"><span class="title">getName</span></span>() &#123;</span><br><span class="line">		<span class="built_in">return</span> name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setName(String name) &#123;</span><br><span class="line">		this.name = name;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public int <span class="function"><span class="title">getGrade</span></span>() &#123;</span><br><span class="line">		<span class="built_in">return</span> grade;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setGrade(int grade) &#123;</span><br><span class="line">		this.grade = grade;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public Teacher <span class="function"><span class="title">getT</span></span>() &#123;</span><br><span class="line">		<span class="built_in">return</span> t;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setT(Teacher t) &#123;</span><br><span class="line">		this.t = t;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public Student(int i, String string, int j) &#123; </span><br><span class="line">		//</span><br><span class="line">		this.num=i;</span><br><span class="line">		this.name=string;</span><br><span class="line">		this.grade=j;</span><br><span class="line">		</span><br><span class="line">		// TODO Auto-generated constructor stub</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setTeacher(Teacher t1) &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		this.t=t1;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="com-experiment05-entity-2"><a href="#com-experiment05-entity-2" class="headerlink" title="com.experiment05.entity"></a>com.experiment05.entity</h4><h4 id="teacher-java"><a href="#teacher-java" class="headerlink" title="teacher.java"></a>teacher.java</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">package com.experiment05.entity;</span><br><span class="line"></span><br><span class="line">public class Teacher &#123;</span><br><span class="line"></span><br><span class="line">	int i;</span><br><span class="line">	String s;</span><br><span class="line">	College c;</span><br><span class="line">	public int <span class="function"><span class="title">getI</span></span>() &#123;</span><br><span class="line">		<span class="built_in">return</span> i;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setI(int i) &#123;</span><br><span class="line">		this.i = i;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public String <span class="function"><span class="title">getS</span></span>() &#123;</span><br><span class="line">		<span class="built_in">return</span> s;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setS(String s) &#123;</span><br><span class="line">		this.s = s;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public College <span class="function"><span class="title">getC</span></span>() &#123;</span><br><span class="line">		<span class="built_in">return</span> c;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setC(College c) &#123;</span><br><span class="line">		this.c = c;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public Teacher(int i, String string) &#123;//</span><br><span class="line">		this.i=i;</span><br><span class="line">		this.s=string;</span><br><span class="line">		// TODO Auto-generated constructor stub</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setCollege(College c1) &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		this.c=c1;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="com-experiment05-resource"><a href="#com-experiment05-resource" class="headerlink" title="com.experiment05.resource"></a>com.experiment05.resource</h4><h4 id="DatabaseUtils-java"><a href="#DatabaseUtils-java" class="headerlink" title="DatabaseUtils.java"></a>DatabaseUtils.java</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">package com.experiment05.resource;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import com.experiment05.entity.College;</span><br><span class="line">import com.experiment05.entity.Student;</span><br><span class="line">import com.experiment05.entity.Teacher;</span><br><span class="line"></span><br><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">public class DatabaseUtils &#123;</span><br><span class="line">    private static final List&lt;Student&gt; STUDENTS = create();</span><br><span class="line"></span><br><span class="line">    private static List&lt;Student&gt; <span class="function"><span class="title">create</span></span>() &#123;</span><br><span class="line">        College c1 = new College(<span class="string">&quot;1&quot;</span>);</span><br><span class="line">        College c2 = new College(<span class="string">&quot;1&quot;</span>);</span><br><span class="line"></span><br><span class="line">        Teacher t1 = new Teacher(1001, <span class="string">&quot;2&quot;</span>);</span><br><span class="line">        t1.setCollege(c1);</span><br><span class="line">        Teacher t2 = new Teacher(1002, <span class="string">&quot;3&quot;</span>);</span><br><span class="line">        t2.setCollege(c2);</span><br><span class="line"></span><br><span class="line">        Student s1 = new Student(201001,<span class="string">&quot;4&quot;</span>, 2010);</span><br><span class="line">        s1.setTeacher(t1);</span><br><span class="line">        Student s2 = new Student(201002,<span class="string">&quot;5&quot;</span>, 2010);</span><br><span class="line">        s2.setTeacher(t1);</span><br><span class="line">        Student s3 = new Student(201103,<span class="string">&quot;6&quot;</span>, 2011);</span><br><span class="line">        s3.setTeacher(t2);</span><br><span class="line">        Student s4 = new Student(201104,<span class="string">&quot;7&quot;</span>, 2011);</span><br><span class="line">        s4.setTeacher(t2);</span><br><span class="line"></span><br><span class="line">        List&lt;Student&gt; students = new ArrayList&lt;&gt;();</span><br><span class="line">        students.add(s1); students.add(s2);</span><br><span class="line">        students.add(s3); students.add(s4);</span><br><span class="line">        <span class="built_in">return</span> students;</span><br><span class="line">    &#125;</span><br><span class="line">    public static List&lt;Student&gt; <span class="function"><span class="title">getStudents</span></span>() &#123;</span><br><span class="line">        <span class="built_in">return</span> STUDENTS;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+      
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/12/28/Java-Optional%E6%93%8D%E4%BD%9C/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Java1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/12/28/Java1/">Java 集合与函数式编程</a>
+    </h1>
+  
+
+        
+        <a href="/2021/12/28/Java1/" class="archive-article-date">
+  	<time datetime="2021-12-28T13:13:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="集合与函数式编程实验"><a href="#集合与函数式编程实验" class="headerlink" title="集合与函数式编程实验"></a>集合与函数式编程实验</h4><p>在com.experiment04.entity下，创建Student类，代码如下；<br>在com.experiment04.resource下，创建DatabaseUtils类，代码如下；<br>在com.experiment04.service下，创建StudentService接口，代码如下；<br>在com.experiment04.service.impl下，创建StudentService接口的实现类StudentServiceImpl，基于集合stream等操作，按接口方法注释需求实现</p>
+<h5 id="代码如下："><a href="#代码如下：" class="headerlink" title="代码如下："></a>代码如下：</h5><h5 id="main"><a href="#main" class="headerlink" title="main"></a>main</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line">import com.experiment04.entity.Student;</span><br><span class="line">import com.experiment04.service.StudentService;</span><br><span class="line">import com.experiment04.service.impl.StudentServiceImpl;</span><br><span class="line">public class main &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        StudentService studentService=new StudentServiceImpl();</span><br><span class="line">        StudentServiceImpl studentServiceShow(StudentServiceImpl)studentService;</span><br><span class="line"></span><br><span class="line">        System.out.println(&quot;--------------1.向集合添加一个学生，返回当前全部学生----------------------&quot;);</span><br><span class="line">        studentService.addStudent(new Student(201001, Student.Sex.FEMALE, &quot;赵阳阳&quot;, 2010));</span><br><span class="line">        studentService.addStudent(new Student(201002, Student.Sex.MALE, &quot;邵鹏&quot;, 2010));</span><br><span class="line">        studentService.addStudent(new Student(201103, Student.Sex.MALE, &quot;高学斌&quot;, 2011));</span><br><span class="line">        studentService.addStudent(new Student(201104, Student.Sex.MALE, &quot;张扬&quot;, 2011));</span><br><span class="line">        studentService.addStudent(new Student(201205, Student.Sex.FEMALE, &quot;吕惠玲&quot;, 2012));</span><br><span class="line">        studentService.addStudent(new Student(201206, Student.Sex.MALE, &quot;曾志优&quot;, 2012));</span><br><span class="line">        show</span><br><span class="line">        studentServiceShow.studentList.forEach(u-&gt; System.out.println(u.getId()+&quot; &quot;</span><br><span class="line">        +u.getName()+&quot; &quot;</span><br><span class="line">                +u.getYear()+&quot; &quot;</span><br><span class="line">                +u.getSex()+&quot; &quot;</span><br><span class="line">        ));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        2.返回指定届的全部学生</span><br><span class="line">        System.out.println(&quot;---------------2.返回指定届的全部学生---------------------&quot;);</span><br><span class="line">        studentService.listStudentsByYear(2010).forEach(u-&gt; System.out.println(u.getId()+&quot; &quot;</span><br><span class="line">                +u.getName()+&quot; &quot;</span><br><span class="line">                +u.getYear()+&quot; &quot;</span><br><span class="line">                +u.getSex()+&quot; &quot;</span><br><span class="line">        ));</span><br><span class="line">        ///3.返回指定届，指定性别的全部学生的姓名</span><br><span class="line">        System.out.println(&quot;----------------3.返回指定届，指定性别的全部学生的姓名--------------------&quot;);</span><br><span class="line">        studentService.listStudentsNames(2010, Student.Sex.MALE).forEach(u-&gt; System.out.println(u));</span><br><span class="line">        ///4.将所有学生，以性别分组</span><br><span class="line">        System.out.println(&quot;----------------4.将所有学生，以性别分组--------------------&quot;);</span><br><span class="line">        try &#123;</span><br><span class="line">            studentService.mapStudentsBySex().get(Student.Sex.MALE).forEach(u-&gt; System.out.println(u.getId()+&quot; &quot;</span><br><span class="line">                            +u.getName()+&quot; &quot;</span><br><span class="line">                            +u.getYear()+&quot; &quot;</span><br><span class="line">                            +u.getSex()+&quot; &quot;</span><br><span class="line">                    ));</span><br><span class="line">            studentService.mapStudentsBySex().get(Student.Sex.FEMALE).forEach(u-&gt; System.out.println(u.getId()+&quot; &quot;</span><br><span class="line">                            +u.getName()+&quot; &quot;</span><br><span class="line">                            +u.getYear()+&quot; &quot;</span><br><span class="line">                            +u.getSex()+&quot; &quot;</span><br><span class="line">                    ));</span><br><span class="line">        &#125; catch (Exception e) &#123;</span><br><span class="line">            ///e.printStackTrace();</span><br><span class="line">            System.out.println(&quot;有个空了&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        ///5.删除指定学号的学生，返回是否成功删除</span><br><span class="line">        System.out.println(&quot;----------------5.删除指定学号的学生，返回是否成功删除--------------------&quot;);</span><br><span class="line"></span><br><span class="line">        System.out.println(studentService.removeStudent(201002));</span><br><span class="line">        ((StudentServiceImpl) studentService).studentList.forEach(u-&gt; System.out.println(u.getId()+&quot; &quot;</span><br><span class="line">                +u.getName()+&quot; &quot;</span><br><span class="line">                +u.getYear()+&quot; &quot;</span><br><span class="line">                +u.getSex()+&quot; &quot;</span><br><span class="line">        ));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="StudentServiceImpl"><a href="#StudentServiceImpl" class="headerlink" title="StudentServiceImpl"></a>StudentServiceImpl</h4><p><code>bash</code><br>package com.experiment04.service.impl;</p>
+<p>import com.experiment04.entity.Student;<br>import com.experiment04.resource.DatabaseUtils;<br>import com.experiment04.service.StudentService;</p>
+<p>import java.util.ArrayList;<br>import java.util.HashMap;<br>import java.util.List;<br>import java.util.Map;<br>import java.util.concurrent.atomic.AtomicBoolean;<br>import java.util.stream.Collectors;<br>import java.util.stream.Stream;</p>
+<p>public class StudentServiceImpl  implements StudentService {<br>    public List<Student>studentList=new ArrayList<Student>();<br>    我多加了个初始值方便测<br>    public void util() {<br>        ///qingkong<br>        studentList.removeIf(u-&gt;{<br>            return true;<br>        });<br>        studentList.add(new Student(201001, Student.Sex.FEMALE, “赵阳阳”, 2010));</p>
+<pre><code>    studentList.add(new Student(201002, Student.Sex.MALE, &quot;邵鹏&quot;, 2010));
+
+    studentList.add(new Student(201103, Student.Sex.MALE, &quot;高学斌&quot;, 2011));
+
+    studentList.add(new Student(201104, Student.Sex.MALE, &quot;张扬&quot;, 2011));
+
+    studentList.add(new Student(201205, Student.Sex.FEMALE, &quot;吕惠玲&quot;, 2012));
+
+    studentList.add(new Student(201206, Student.Sex.MALE, &quot;曾志优&quot;, 2012));
+&#125;
+@Override
+public List&lt;Student&gt; addStudent(Student student) &#123;
+    studentList.add(student);
+    return studentList;
+&#125;
+
+@Override
+public List&lt;Student&gt; listStudentsByYear(int year) &#123;
+    List&lt;Student&gt;studentsYear=new ArrayList&lt;Student&gt;();
+    /*studentList.forEach(u-&gt;&#123;
+        if(u.getYear()==year)
+        &#123;
+            studentsYear.add(u);
+        &#125;
+    &#125;);*/
+    Stream&lt;Student&gt;stream =DatabaseUtils.getStudents().stream();
+    Stream&lt;Student&gt;newstream= stream.filter(s-&gt;&#123;
+       if(s.getYear()==year)&#123;
+           return true;
+       &#125;
+       return false;
+    &#125;);
+    studentsYear=newstream.collect(Collectors.toList());
+    return studentsYear;
+&#125;
+
+@Override
+public List&lt;String&gt; listStudentsNames(int year, Student.Sex sex) &#123;
+    List &lt;String&gt;yearSearchList=new ArrayList&lt;String&gt;();
+    studentList.forEach(u-&gt;&#123;
+        if(u.getYear()==year &amp;&amp; u.getSex()==sex)
+        &#123;
+            yearSearchList.add(u.getName());
+        &#125;
+    &#125;);
+    return yearSearchList;
+
+&#125;
+
+@Override
+public Map&lt;Student.Sex, List&lt;Student&gt;&gt; mapStudentsBySex() &#123;
+    Map&lt;Student.Sex,List&lt;Student&gt;&gt; map=new HashMap&lt;&gt;();
+    map.put(Student.Sex.MALE,new ArrayList&lt;Student&gt;());
+    map.put(Student.Sex.FEMALE,new ArrayList&lt;Student&gt;());
+    studentList.forEach(u-&gt;&#123;
+        if(u.getSex()== Student.Sex.MALE)&#123;
+            map.get(Student.Sex.MALE).add(u);
+        &#125;
+        if(u.getSex()== Student.Sex.FEMALE)&#123;
+            map.get(Student.Sex.FEMALE).add(u);
+        &#125;
+    &#125;);
+
+    return map;
+&#125;
+
+@Override
+public boolean removeStudent(int id) &#123;
+</code></pre>
+<p>//AtomicBoolean flag= new AtomicBoolean(false);<br>       /*  studentList=studentList.stream().filter(i-&gt;{<br>            if(i.getId()!=id){</p>
+<pre><code>            return true;
+        &#125;
+        return false;
+    &#125;).collect(Collectors.toList());
+    return true;
+    *//*return  studentList.removeIf(u-&gt;&#123;
+        if(u.getId()==id)
+        &#123;
+
+            return true;
+        &#125;
+        return false;
+    &#125;);*//*
+</code></pre>
+<p>*/return DatabaseUtils.getStudents().removeIf(s-&gt;s.getId()==id);</p>
+<pre><code>&#125;
+</code></pre>
+<p>}</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">#### DatabaseUtils</span><br><span class="line">```bash```</span><br><span class="line">package com.experiment04.resource;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import com.experiment04.entity.Student;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import java.util.ArrayList;</span><br><span class="line"></span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class DatabaseUtils &#123;</span><br><span class="line"></span><br><span class="line">    private static final List&lt;Student&gt; STUDENTS = create();</span><br><span class="line"></span><br><span class="line">    private static List&lt;Student&gt; create() &#123;</span><br><span class="line"></span><br><span class="line">        List&lt;Student&gt; students = new ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        students.add(new Student(201001, Student.Sex.FEMALE, &quot;赵阳阳&quot;, 2010));</span><br><span class="line"></span><br><span class="line">        students.add(new Student(201002, Student.Sex.MALE, &quot;邵鹏&quot;, 2010));</span><br><span class="line"></span><br><span class="line">        students.add(new Student(201103, Student.Sex.MALE, &quot;高学斌&quot;, 2011));</span><br><span class="line"></span><br><span class="line">        students.add(new Student(201104, Student.Sex.MALE, &quot;张扬&quot;, 2011));</span><br><span class="line"></span><br><span class="line">        students.add(new Student(201205, Student.Sex.FEMALE, &quot;吕惠玲&quot;, 2012));</span><br><span class="line"></span><br><span class="line">        students.add(new Student(201206, Student.Sex.MALE, &quot;曾志优&quot;, 2012));</span><br><span class="line"></span><br><span class="line">        return students;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static List&lt;Student&gt; getStudents() &#123;</span><br><span class="line"></span><br><span class="line">        return STUDENTS;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="StudentService"><a href="#StudentService" class="headerlink" title="StudentService"></a>StudentService</h4><p><code>bash</code></p>
+<p>package com.experiment04.service;<br>import com.experiment04.entity.Student;<br>import com.experiment04.resource.DatabaseUtils;</p>
+<p>import java.util.List;<br>import java.util.Map;</p>
+<p>public interface StudentService {</p>
+<pre><code>/**
+
+ * 向集合添加一个学生，返回当前全部学生
+
+ * @param student
+
+ * @return
+
+ */
+
+
+List&lt;Student&gt; addStudent(Student student);
+
+
+
+/**
+
+ * 返回指定届的全部学生
+
+ * @param year
+
+ * @return
+
+ */
+
+List&lt;Student&gt; listStudentsByYear(int year);
+
+
+
+/**
+
+ * 返回指定届，指定性别的全部学生的姓名
+
+ * @param year
+
+ * @param sex
+
+ * @return
+
+ */
+
+List&lt;String&gt; listStudentsNames(int year, Student.Sex sex);
+
+
+
+/**
+
+ * 将所有学生，以性别分组
+
+ * @return
+
+ */
+
+Map&lt;Student.Sex, List&lt;Student&gt;&gt; mapStudentsBySex();
+
+
+
+/**
+
+ * 删除指定学号的学生，返回是否成功删除
+
+ * @param id
+
+ * @return
+
+ */
+
+boolean removeStudent(int id);
+</code></pre>
+<p>}</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line">#### Student</span><br><span class="line"></span><br><span class="line">```bash```</span><br><span class="line">package com.experiment04.entity;</span><br><span class="line">public class Student &#123;</span><br><span class="line">    public enum Sex &#123;</span><br><span class="line"></span><br><span class="line">        MALE, FEMALE</span><br><span class="line">    &#125;</span><br><span class="line">    private int id;</span><br><span class="line"></span><br><span class="line">    private Sex sex;</span><br><span class="line"></span><br><span class="line">    private String name;</span><br><span class="line"></span><br><span class="line">    // 例如2017级</span><br><span class="line"></span><br><span class="line">    private int year;</span><br><span class="line"></span><br><span class="line">    public Student(int id, Sex sex, String name, int year) &#123;</span><br><span class="line"></span><br><span class="line">        this.id = id;</span><br><span class="line"></span><br><span class="line">        this.sex = sex;</span><br><span class="line"></span><br><span class="line">        this.name = name;</span><br><span class="line"></span><br><span class="line">        this.year = year;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    下面全是set get</span><br><span class="line">    public int getId() &#123;</span><br><span class="line"></span><br><span class="line">        return id;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public void setId(int id) &#123;</span><br><span class="line"></span><br><span class="line">        this.id = id;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public Sex getSex() &#123;</span><br><span class="line"></span><br><span class="line">        return sex;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public void setSex(Sex sex) &#123;</span><br><span class="line"></span><br><span class="line">        this.sex = sex;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public String getName() &#123;</span><br><span class="line"></span><br><span class="line">        return name;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public void setName(String name) &#123;</span><br><span class="line"></span><br><span class="line">        this.name = name;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public int getYear() &#123;</span><br><span class="line"></span><br><span class="line">        return year;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public void setYear(int year) &#123;</span><br><span class="line"></span><br><span class="line">        this.year = year;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/12/28/Java1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-C-语言实验-10" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -830,177 +1134,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C-语言实验-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-2/">C 语言实验 2</a>
-    </h1>
-  
-
-        
-        <a href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-2/" class="archive-article-date">
-  	<time datetime="2021-12-15T10:56:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="C语言-锐格实验"><a href="#C语言-锐格实验" class="headerlink" title="C语言 锐格实验"></a>C语言 锐格实验</h3><h4 id="二-多维数组"><a href="#二-多维数组" class="headerlink" title="二.多维数组"></a>二.多维数组</h4><h4 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h4><p>七段显示器输出。计算器、电子手表和其它电子设备经常依靠七段显示器进行数值的输出。为了组成数字，这些设备需要“打开”7个显示段中的某些部分，同时“关闭”其它部分。假设需要设置一个数组来记住显示每个数字时需要“打开”的显示段。试编写一个程序，将输入进来的一位十进制数字转换成对应的显示段二进制编码，并实现显示码输出。各显示段的标号如下所示：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">   int max_save[10][7]=&#123;&#123;1,1,1,1,1,1,0&#125;,</span><br><span class="line">                        &#123;0,1,1,0,0,0,0&#125;,</span><br><span class="line">                        &#123;1,1,0,1,1,0,1&#125;,</span><br><span class="line">                        &#123;1,1,1,1,0,0,1&#125;,</span><br><span class="line">                        &#123;0,1,1,0,0,1,1&#125;,</span><br><span class="line">                        &#123;1,0,1,1,0,1,1&#125;,</span><br><span class="line">                        &#123;1,0,1,1,1,1,1&#125;,</span><br><span class="line">                        &#123;1,1,1,0,0,0,0&#125;,</span><br><span class="line">                        &#123;1,1,1,1,1,1,1&#125;,</span><br><span class="line">                        &#123;1,1,1,1,0,1,1&#125;&#125;;</span><br><span class="line">   int num,col;</span><br><span class="line">   scanf(<span class="string">&quot;%d&quot;</span>,&amp;num);</span><br><span class="line">   /*模拟七段数码显示管分5行输出，</span><br><span class="line">    *奇数行只输出空格或者-,</span><br><span class="line">    *偶数行只输出空格或者|。*/</span><br><span class="line">   //start</span><br><span class="line">       <span class="keyword">if</span>(max_save[num][0]==1) <span class="built_in">printf</span>(<span class="string">&quot; - \n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;   \n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(max_save[num][5]==1 &amp;&amp; max_save[num][1]==1) <span class="built_in">printf</span>(<span class="string">&quot;| |\n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(max_save[num][5]==1) <span class="built_in">printf</span>(<span class="string">&quot;|  \n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(max_save[num][1]==1) <span class="built_in">printf</span>(<span class="string">&quot;  |\n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;   \n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(max_save[num][6]==1) <span class="built_in">printf</span>(<span class="string">&quot; - \n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;   \n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(max_save[num][4]==1 &amp;&amp; max_save[num][2]==1) <span class="built_in">printf</span>(<span class="string">&quot;| |\n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(max_save[num][4]==1) <span class="built_in">printf</span>(<span class="string">&quot;|  \n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(max_save[num][2]==1) <span class="built_in">printf</span>(<span class="string">&quot;  |\n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;   \n&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(max_save[num][3]==1) <span class="built_in">printf</span>(<span class="string">&quot; - \n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;   \n&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   //end</span><br><span class="line">   <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-2/#more">more >></a>
-        
-      
-
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">锐格</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C-语言实验-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-1/">C 语言实验 1</a>
-    </h1>
-  
-
-        
-        <a href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-1/" class="archive-article-date">
-  	<time datetime="2021-12-15T10:44:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="C语言-锐格实验"><a href="#C语言-锐格实验" class="headerlink" title="C语言 锐格实验"></a>C语言 锐格实验</h3><h5 id="一-字符串"><a href="#一-字符串" class="headerlink" title="一.字符串"></a>一.字符串</h5><h6 id="1-大写变小写。读一个字符串（长度-lt-10），将其中出现的大写字母统统变成小写字母，此后输出改变后的字符串"><a href="#1-大写变小写。读一个字符串（长度-lt-10），将其中出现的大写字母统统变成小写字母，此后输出改变后的字符串" class="headerlink" title="1.大写变小写。读一个字符串（长度&lt;10），将其中出现的大写字母统统变成小写字母，此后输出改变后的字符串"></a>1.大写变小写。读一个字符串（长度&lt;10），将其中出现的大写字母统统变成小写字母，此后输出改变后的字符串</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line"><span class="comment">#define LEN 10</span></span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">   char array[LEN];</span><br><span class="line">   int i;</span><br><span class="line">   gets(array);</span><br><span class="line">   i=0;</span><br><span class="line">   <span class="keyword">while</span>(array[i]!=<span class="string">&#x27;\0&#x27;</span>)</span><br><span class="line">   &#123;</span><br><span class="line">      //start</span><br><span class="line">            <span class="keyword">if</span>(array[i]&gt;=<span class="string">&#x27;A&#x27;</span> &amp;&amp; array[i]&lt;=<span class="string">&#x27;Z&#x27;</span>)</span><br><span class="line">      &#123;</span><br><span class="line">          array[i]+=32;</span><br><span class="line">      &#125;</span><br><span class="line">      i++;</span><br><span class="line">      //end</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="built_in">printf</span>(<span class="string">&quot;%s&quot;</span>,array);</span><br><span class="line">   <span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-1/#more">more >></a>
-        
-      
-
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">锐格</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-1/">展开全文 >></a>
         </p>
       
 
