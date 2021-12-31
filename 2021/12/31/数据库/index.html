@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lbl1126.github.io">
-  <title>Archives: 2021/12 | lubolin</title>
+  <title>数据库基本操作总结 1 | lubolin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="--nefu">
-<meta property="og:type" content="website">
-<meta property="og:title" content="lubolin">
-<meta property="og:url" content="https://lbl1126.github.io/archives/2021/12/index.html">
+  <meta name="description" content="在Oracle数据库下运行的。。。 12345SQL语言集数据定义、数据操纵、数据查询、数据控制功能于一体。数据定义：create，drop，alter数据操纵：增(insert into … )，删(delete from …)，改(update … set …)数据查询：select数据控制：grant(授予权限)，revoke(收回权限)   一、数据定义（create，alter，drop">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库基本操作总结 1">
+<meta property="og:url" content="https://lbl1126.github.io/2021/12/31/%E6%95%B0%E6%8D%AE%E5%BA%93/index.html">
 <meta property="og:site_name" content="lubolin">
-<meta property="og:description" content="--nefu">
+<meta property="og:description" content="在Oracle数据库下运行的。。。 12345SQL语言集数据定义、数据操纵、数据查询、数据控制功能于一体。数据定义：create，drop，alter数据操纵：增(insert into … )，删(delete from …)，改(update … set …)数据查询：select数据控制：grant(授予权限)，revoke(收回权限)   一、数据定义（create，alter，drop">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-12-31T11:00:22.000Z">
+<meta property="article:modified_time" content="2021-12-31T11:07:16.461Z">
 <meta property="article:author" content="lubolin">
 <meta name="twitter:card" content="summary">
   
@@ -167,352 +169,105 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-数据库" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/12/31/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93-2/" class="archive-article-date">
-  	<time datetime="2021-12-31T11:08:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-31</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/12/31/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93-2/">数据库基本操作总结 2</a>
+    <h1 class="article-title" itemprop="name">
+      数据库基本操作总结 1
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/12/31/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="archive-article-date">
+        
+        <a href="/2021/12/31/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="archive-article-date">
   	<time datetime="2021-12-31T11:00:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-31</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/12/31/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库基本操作总结 1</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在Oracle数据库下运行的。。。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">SQL语言集数据定义、数据操纵、数据查询、数据控制功能于一体。</span><br><span class="line">数据定义：create，drop，alter</span><br><span class="line">数据操纵：增(insert into … )，删(delete from …)，改(update … <span class="built_in">set</span> …)</span><br><span class="line">数据查询：select</span><br><span class="line">数据控制：grant(授予权限)，revoke(收回权限)</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<p>一、数据定义（create，alter，drop）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">1.建立基本表</span><br><span class="line">创建教材中的学生表（Student）、学生选课表（SC）、课程表（Course）</span><br><span class="line">（1）学生表：Student (Sno，Sname，Sage，Ssex，Sdept），其中学号Sno为主码。</span><br><span class="line"></span><br><span class="line">create table Student</span><br><span class="line">(</span><br><span class="line">    Sno number primary key,</span><br><span class="line">    Sname varchar2(10),</span><br><span class="line">    Sage int,</span><br><span class="line">    Ssex char(2),</span><br><span class="line">    Sdept varchar2(10)</span><br><span class="line">);</span><br><span class="line">（2）课程表：Course (Cno, Cname, Cpno, Ccredit)其中课程号Cno主码；先行课为外码参照Course表中Cno字段。</span><br><span class="line"></span><br><span class="line">create table Course</span><br><span class="line">(</span><br><span class="line">    Cno number primary key,</span><br><span class="line">    Cname varchar2(10),</span><br><span class="line">    Cpno varchar2(10) references Course(Cno),</span><br><span class="line">    Ccredit int</span><br><span class="line">);</span><br><span class="line">（3）学生选课表：SC(Sno, Cno, Grade)其中学号Sno、课程号Cno为主码；Sno为外码参照Student表中Sno字段；Cno为外码参照Course表中Cno字段。</span><br><span class="line"></span><br><span class="line">create table SC</span><br><span class="line">(</span><br><span class="line">    Sno number references Student(Sno),</span><br><span class="line">    Cno number references Course(Cno),</span><br><span class="line">    Grade int,</span><br><span class="line">    primary key (Sno,Cno)</span><br><span class="line">);</span><br><span class="line">2.修改基本表</span><br><span class="line">（1）在Student表中加入属性BloodType【char(2)型】。</span><br><span class="line"></span><br><span class="line">alter table Student add BloodType char(2);</span><br><span class="line">（2）修改表Student中的Sdept属性的数据类型为varchar2(40)，注意和定义表的时候类型不同。</span><br><span class="line"></span><br><span class="line">alter table Student modify Sdept varchar2(40);</span><br><span class="line">（3）给表Student的sage列添加一个自定义约束，sage必须大于15且小于30。</span><br><span class="line"></span><br><span class="line">alter table Student add constraint age_ck check(Sage&gt;15 and Sage&lt;30);</span><br><span class="line">（4）删除（3）中新添加的约束。</span><br><span class="line"></span><br><span class="line">alter table Student drop constraint age_ck;</span><br><span class="line">（5）SC表中的sno增加外键约束f_sno，参照Student表中的sno字段。</span><br><span class="line"></span><br><span class="line">alter table sc add constraint f_sno foreign key (sno) references student(sno);</span><br><span class="line">（6）删除表Student中的字段BloodType。</span><br><span class="line"></span><br><span class="line">alter table Student drop (BloodType);   <span class="comment">#记得加括号，不加括号就要在drop前面写column</span></span><br><span class="line">3.删除基本表</span><br><span class="line">（1）删除基本表Student。</span><br><span class="line"></span><br><span class="line">drop table Student;</span><br><span class="line">（2）删除基本表SC。</span><br><span class="line"></span><br><span class="line">drop table SC;</span><br><span class="line">4.索引操作</span><br><span class="line">（1）在SC表上建立关于Sno升序、Cno降序的唯一索引i_sc+学号后四位。</span><br><span class="line"></span><br><span class="line">create unique index i_sc on SC(Sno asc,Cno desc,substr(Sno,-4));</span><br><span class="line">（2）删除Course表上的索引i_sc。</span><br><span class="line"></span><br><span class="line">drop index i_sc;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>二、数据操纵（insert，update，delete）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">1.插入数据</span><br><span class="line">1）向Student表中插入数据</span><br><span class="line">2）向Course表中插入数据</span><br><span class="line">3）向SC表中插入数据</span><br><span class="line"></span><br><span class="line">insert into STUDENT(SNO,SNAME,SSEX,SAGE,SDEPT) values(200215121,<span class="string">&#x27;李勇&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,20,<span class="string">&#x27;CS&#x27;</span>);</span><br><span class="line">insert into STUDENT(SNO,SNAME,SSEX,SAGE,SDEPT) values(200215122,<span class="string">&#x27;刘晨&#x27;</span>,<span class="string">&#x27;女&#x27;</span>,19,<span class="string">&#x27;CS&#x27;</span>);</span><br><span class="line">insert into STUDENT(SNO,SNAME,SSEX,SAGE,SDEPT) values(200215123,<span class="string">&#x27;王敏&#x27;</span>,<span class="string">&#x27;女&#x27;</span>,18,<span class="string">&#x27;MA&#x27;</span>);</span><br><span class="line">insert into STUDENT(SNO,SNAME,SSEX,SAGE,SDEPT) values(200215125,<span class="string">&#x27;张立&#x27;</span>,<span class="string">&#x27;男&#x27;</span>,19,<span class="string">&#x27;IS&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment"># 记得先把COURSE表中的外键约束关了，否则数据插不进去</span></span><br><span class="line">insert into COURSE(CNO,CNAME,CPNO,CCREDIT) values(1,<span class="string">&#x27;数据库&#x27;</span>,5,4);</span><br><span class="line">insert into COURSE(CNO,CNAME,CPNO,CCREDIT) values(2,<span class="string">&#x27;数学&#x27;</span>,null,2);</span><br><span class="line">insert into COURSE(CNO,CNAME,CPNO,CCREDIT) values(3,<span class="string">&#x27;信息系统&#x27;</span>,1,4);</span><br><span class="line">insert into COURSE(CNO,CNAME,CPNO,CCREDIT) values(4,<span class="string">&#x27;操作系统&#x27;</span>,6,3);</span><br><span class="line">insert into COURSE(CNO,CNAME,CPNO,CCREDIT) values(5,<span class="string">&#x27;数据结构&#x27;</span>,7,4);</span><br><span class="line">insert into COURSE(CNO,CNAME,CPNO,CCREDIT) values(6,<span class="string">&#x27;数据处理&#x27;</span>,null,2);</span><br><span class="line">insert into COURSE(CNO,CNAME,CPNO,CCREDIT) values(7,<span class="string">&#x27;PASCAL语言&#x27;</span>,6,4);</span><br><span class="line"></span><br><span class="line">insert into SC(SNO,CNO,GRADE) values(200215121,1,92);</span><br><span class="line">insert into SC(SNO,CNO,GRADE) values(200215121,2,85);</span><br><span class="line">insert into SC(SNO,CNO,GRADE) values(200215121,3,88);</span><br><span class="line">insert into SC(SNO,CNO,GRADE) values(200215122,4,90);</span><br><span class="line">insert into SC(SNO,CNO,GRADE) values(200215122,3,80);</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>2.修改数据</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">1）将王敏的同学的年龄改为20。</span><br><span class="line"></span><br><span class="line">update STUDENT <span class="built_in">set</span> sage=20 <span class="built_in">where</span> sname=<span class="string">&#x27;王敏&#x27;</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">2）将全部同学的年龄加1。</span><br><span class="line"></span><br><span class="line">update STUDENT <span class="built_in">set</span> sage=sage+1;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">3）将’CS’系同学的选课信息中的成绩置0。</span><br><span class="line"></span><br><span class="line">update SC <span class="built_in">set</span> grade=0 <span class="built_in">where</span> sno <span class="keyword">in</span> </span><br><span class="line">(</span><br><span class="line">    select sc.sno from STUDENT join SC on(student.sno=sc.sno)</span><br><span class="line">    <span class="built_in">where</span> sdept=<span class="string">&#x27;CS&#x27;</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>3.删除数据</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">1）删除和’刘晨’在同一个系的学生的信息。（包括刘晨自己也会被删除）</span><br><span class="line"></span><br><span class="line">delete from STUDENT <span class="built_in">where</span> sdept <span class="keyword">in</span></span><br><span class="line">(</span><br><span class="line">    select sdept from STUDENT</span><br><span class="line">    <span class="built_in">where</span> sname=<span class="string">&#x27;刘晨&#x27;</span></span><br><span class="line">);</span><br><span class="line">然后发现删除不了，因为有外键约束，SC表依赖当前表的SNO，</span><br><span class="line">所以要先删掉SC表中SNO的外键约束alter table sc drop constraint SYS_C0051208;</span><br><span class="line">再执行删除语句即可。</span><br><span class="line"></span><br><span class="line">2）删除’CS’系同学的选课信息。</span><br><span class="line"></span><br><span class="line">delete from SC <span class="built_in">where</span> sno <span class="keyword">in</span></span><br><span class="line">(</span><br><span class="line">    select sno from STUDENT</span><br><span class="line">    <span class="built_in">where</span> sdept=<span class="string">&#x27;CS&#x27;</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>三、数据查询（select）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br></pre></td><td class="code"><pre><span class="line">1.包括排序、分组的单表查询</span><br><span class="line">（1）求数学系学生的学号和姓名。</span><br><span class="line"></span><br><span class="line">select sno,sname from student where sdept=&#x27;MA&#x27;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">（2）求选修了课程的学生学号。</span><br><span class="line"></span><br><span class="line"># 学号distinct去重，因为SC表中学号可以重复，一个学号可选多门课</span><br><span class="line"></span><br><span class="line">select distinct sno from sc; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">（3）求选修课程号为‘2’的学生号和成绩，并要求对查询结果按成绩的降序排列，如果成绩相同按学号的升序排列。</span><br><span class="line"></span><br><span class="line">select sno,grade from sc where cno=2 order by grade DESC,sno ASC;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">（4）求选修课程号为’2’且成绩在80～90之间的学生学号和成绩，并将成绩乘以0.8输出。</span><br><span class="line"></span><br><span class="line">select sno,grade*0.8 from sc where cno=2 and grade&gt;=80 and grade&lt;=90;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">（5）求数学系或计算机系姓张的学生的信息。</span><br><span class="line"></span><br><span class="line"># 注意and的优先级高于or，加一个括号即可</span><br><span class="line"></span><br><span class="line">select * from student where sname like &#x27;张%&#x27; and (sdept=&#x27;MA&#x27; or sdept=&#x27;CS&#x27;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">（6）求缺少了成绩的学生的学号和课程号。</span><br><span class="line"></span><br><span class="line">select sno,cno from sc where grade is null;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">（7）查询各个课程号与相应的选课人数。</span><br><span class="line"></span><br><span class="line">select cno,count(*) from sc group by cno;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">2.多表连接查询</span><br><span class="line">（1）查询每个学生的情况以及他所选修的课程。</span><br><span class="line"></span><br><span class="line">select student.sno,sname,ssex,sdept,cno from student,sc where student.sno=sc.sno;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">（2）求学生的学号、姓名、选修的课程及成绩。</span><br><span class="line"></span><br><span class="line">select student.sno,sname,cno,grade from student,sc where student.sno=sc.sno;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">（3）求选修课程号为‘1’且成绩在90分以上的学生学号、姓名和成绩。</span><br><span class="line"></span><br><span class="line">select student.sno,sname,grade from student,sc where student.sno=sc.sno and cno=1 and grade&gt;=90;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">（4）查询每一门课程的间接先行课。</span><br><span class="line"></span><br><span class="line">select c1.cno,c2.cpno from course c1,course c2 where c1.cpno=s2.cno;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">（5）查询与’刘晨’在同一个系学习的学生。</span><br><span class="line"></span><br><span class="line">select s1.sno,s1.sname,s1.sage,s1.ssex,s1.sdept </span><br><span class="line">from student s1,student s2 </span><br><span class="line">where s1.sdept=s2.sdept and s2.sname=&#x27;刘晨&#x27;; #两个相同的表通过sdept连接</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">（6）查询选修了课程名为‘信息系统‘的学生学号和姓名。</span><br><span class="line"></span><br><span class="line">select sc.sno,sname from student,sc,course </span><br><span class="line">where student.sno=sc.sno and sc.cno=course.cno and cname=&#x27;信息系统&#x27;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">（7）查询平均成绩在80分以上的学生学号和平均成绩。</span><br><span class="line"></span><br><span class="line">select sno,avg(grade) from sc group by sno having avg(grade)&gt;=80;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">（8）查询选修了1门以上课程的学生的学号。</span><br><span class="line"></span><br><span class="line">select sno from sc group by sno having count(*)&gt;1;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">3.嵌套查询</span><br><span class="line">（1）求选修了信息系统的学号和姓名。</span><br><span class="line"></span><br><span class="line">select sno,sname from student where sno in</span><br><span class="line">(</span><br><span class="line">    select sno from sc where cno in </span><br><span class="line">    (</span><br><span class="line">        select cno from course </span><br><span class="line">        where cname=&#x27;信息系统&#x27;</span><br><span class="line">    )</span><br><span class="line">);</span><br><span class="line">（2）查询与刘晨在同一个系学习的学生。</span><br><span class="line"></span><br><span class="line">select * from student where sdept in</span><br><span class="line">(</span><br><span class="line">	select sdept from student </span><br><span class="line">	where sname=&#x27;刘晨&#x27;</span><br><span class="line">);</span><br><span class="line">（3）求选修1号课程的成绩高于刘晨的成绩（指刘晨选修的所有的课程的成绩）的学生学号及成绩。</span><br><span class="line"></span><br><span class="line">select sno,grade from sc where cno=1 and grade &gt;</span><br><span class="line">(</span><br><span class="line">    select max(grade) from sc where sno in</span><br><span class="line">    (</span><br><span class="line">        select sno from student</span><br><span class="line">        where sname=&#x27;刘晨&#x27;</span><br><span class="line">    )</span><br><span class="line">);</span><br><span class="line">（4）求其他系中比计算机系某一学生年龄小的学生（即年龄小于计算机系年龄最大者的学生）。</span><br><span class="line"></span><br><span class="line">select * from student where sage &lt;</span><br><span class="line">(</span><br><span class="line">    select max(sage) from student </span><br><span class="line">    where sdept=&#x27;CS&#x27;</span><br><span class="line">);</span><br><span class="line">（5）求其他系中比计算机系学生年龄都小的学生姓名及年龄。</span><br><span class="line"></span><br><span class="line">select sname,sage from student where sage &lt;</span><br><span class="line">(</span><br><span class="line">    select min(sage) from student </span><br><span class="line">    where sdept=&#x27;CS&#x27;</span><br><span class="line">);</span><br><span class="line">（6）求选修课程超过2门的学生的学号和姓名。</span><br><span class="line"></span><br><span class="line">select sno,sname from student where sno in</span><br><span class="line">(</span><br><span class="line">    select sno from sc</span><br><span class="line">    group by sno having count(*)&gt;2</span><br><span class="line">);</span><br><span class="line">（7）求没有选修3号课程的学生姓名。</span><br><span class="line"></span><br><span class="line">select sname from student where not exists </span><br><span class="line">(</span><br><span class="line">    select * from sc</span><br><span class="line">    where cno=3 and student.sno=sc.sno</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">（8）查询选修了全部课程的学生姓名。【重点！】</span><br><span class="line"></span><br><span class="line">select sname from student where not exists </span><br><span class="line">(</span><br><span class="line">    select * from course where not exists</span><br><span class="line">    (</span><br><span class="line">        select * from sc</span><br><span class="line">        where sc.cno=course.cno and sc.sno=student.sno</span><br><span class="line">    )</span><br><span class="line">);</span><br><span class="line">分析：</span><br><span class="line">这个比较难懂，我们先看看内两层查询，表示选出当前学号（比如说122）没选的课</span><br><span class="line"></span><br><span class="line">select * from course where not exists</span><br><span class="line">(</span><br><span class="line">    select * from sc</span><br><span class="line">    where sc.cno=course.cno and sc.sno=200215122</span><br><span class="line">); </span><br><span class="line">如果这个结果是空，表示当前学号（比如说122）没选的课为空，最外层加一个select sname from student where not exists，表示选出所有 没有没选的课 的学生。</span><br><span class="line"></span><br><span class="line">可以将not exists当作“减法”理解，内两层的意思就是把所有的课减去122学号选的课，如果为空（所有的课被122选的课给减没了），那么就选出122来。</span><br><span class="line"></span><br><span class="line">（9）求至少选修了学号为“200215121”的学生所选修全部课程的学生学号和姓名。【重点！】</span><br><span class="line">分析：</span><br><span class="line">先选出121学生选的课 减去 122学生选的课：</span><br><span class="line"></span><br><span class="line">select * from sc sc1 where sno=200215121 and not exists</span><br><span class="line">(</span><br><span class="line">    select * from sc sc2</span><br><span class="line">    where sc1.cno=sc2.cno and sc2.sno=200215122</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">单纯的只有where not exist表示选出空的。</span><br><span class="line">以上的整个式子表示减法：最内层用cno连接，表示找选课记录，然后121选课集合减去122选课集合。</span><br><span class="line"></span><br><span class="line">过程的话实际就是两层for循环遍历，for(i: 121选课)&#123;for (j: 122选课)&#125;，对于每个i，判断122选课中是否存在j满足i.cno=j.cno，如果有，不为空，那么not exists就不选出这个i，实际上这不就相当于当前遍历到的i的记录被相同的j减去了吗！而且外层循环是121选课，说明最终输出的答案只能是121选课的子集，只要答案为空我们就把他选出来！</span><br><span class="line"></span><br><span class="line">如果为空，说明122这个学号把121的所有课都选了（所以121的课被减没了）。</span><br><span class="line">还有一种情况，就是122这个学号不仅把121的所有课都选了，他还选了其他课，这个时候的减法结果不是按“负数”理解，就理解成122把121的所有课都减没了，他还剩了多余的课，那是122的选课集合剩了(不是121剩了)，最主要的是121被减没了，所以121的选课集合答案是空。</span><br><span class="line"></span><br><span class="line">绕了这么多，反正核心就是：</span><br><span class="line">找一个学生的选课集合作为“减数”，如果他大于等于121的选课集合，那么121的选课集合减去他之后就能变成空，这个“减数”就是我们要找的。</span><br><span class="line"></span><br><span class="line">最后，把学号122改成变量，加一个最外层查询遍历所有学生，</span><br><span class="line">因为找到为空的就要把他选出来，所以最外层写not exists选出空的，那么整个答案就是：</span><br><span class="line"></span><br><span class="line">select sno,sname from student where not exists</span><br><span class="line">(</span><br><span class="line">    select * from sc sc1 where sno=200215121 and not exists</span><br><span class="line">    (</span><br><span class="line">        select * from sc sc2</span><br><span class="line">        where sc1.cno=sc2.cno and sc2.sno=student.sno</span><br><span class="line">    )</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+      
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/12/31/Java-IO%E6%B5%81%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2021-12-31T10:52:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-31</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2021/12/31/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93-2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          数据库基本操作总结 2
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/12/31/Java-IO%E6%B5%81%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java IO流的基本使用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/12/31/Java-IO%E6%B5%81%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">Java IO流的基本使用</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/12/31/Java-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91/" class="archive-article-date">
-  	<time datetime="2021-12-31T10:43:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/12/31/Java-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91/">Java 多线程并发</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/12/31/Java-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" class="archive-article-date">
-  	<time datetime="2021-12-31T10:31:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/12/31/Java-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">Java 异常处理</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/12/28/Java-Optional%E6%93%8D%E4%BD%9C/" class="archive-article-date">
-  	<time datetime="2021-12-28T14:03:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/12/28/Java-Optional%E6%93%8D%E4%BD%9C/">Java Optional操作</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/12/28/Java1/" class="archive-article-date">
-  	<time datetime="2021-12-28T13:13:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/12/28/Java1/">Java 集合与函数式编程</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-10/" class="archive-article-date">
-  	<time datetime="2021-12-15T11:41:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-10/">C 语言实验 10</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">锐格</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-9/" class="archive-article-date">
-  	<time datetime="2021-12-15T11:37:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-9/">C 语言实验 9</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">锐格</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-8/" class="archive-article-date">
-  	<time datetime="2021-12-15T11:33:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-8/">C 语言实验 8</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">锐格</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2021/12/page/2/">2</a><a class="extend next" rel="next" href="/archives/2021/12/page/2/">下一页</a>
-    </nav>
   
 
 
@@ -545,8 +300,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

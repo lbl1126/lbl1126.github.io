@@ -169,6 +169,438 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-C-语言实验-7" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-7/">C 语言实验 7</a>
+    </h1>
+  
+
+        
+        <a href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-7/" class="archive-article-date">
+  	<time datetime="2021-12-15T11:28:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="C语言-锐格实验"><a href="#C语言-锐格实验" class="headerlink" title="C语言 锐格实验"></a>C语言 锐格实验</h3><h5 id="六-动态数组"><a href="#六-动态数组" class="headerlink" title="六.动态数组"></a>六.动态数组</h5><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><p>约瑟夫环：<br>有n个人,围成一个环，编号为 0、1、2、3、、、n-1，从第一个人开始循环报数，假设数到m的那个人出列，然后从下一个人继续数数，再数到m出列，以此循环，最后那个人为胜利者，求胜利者的编号。<br>输入数据有多组，每组为n与m；每组数据单独1行输出,直接输出数组编号，不用+1处理；</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line"></span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    int n,m;</span><br><span class="line">    int *p;</span><br><span class="line">    int i;</span><br><span class="line">    int count;</span><br><span class="line">    int num;</span><br><span class="line">    <span class="keyword">while</span>(scanf(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;m)!=-1)</span><br><span class="line">    &#123;</span><br><span class="line">        num=0;</span><br><span class="line">        count=0;</span><br><span class="line">        p=(int *)calloc(n,sizeof(int));</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">            *(p+i)=-1;</span><br><span class="line">        <span class="keyword">while</span>(num!=n-1)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(*(p+i)!=0) count++;</span><br><span class="line">                <span class="keyword">if</span>(count==m)</span><br><span class="line">                &#123;</span><br><span class="line">                    *(p+i)=0;</span><br><span class="line">                    num++;</span><br><span class="line">                    count=0;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(num==n-1) <span class="built_in">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(*(p+i)==-1) <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,i);</span><br><span class="line">        &#125;</span><br><span class="line">        free(p);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-7/#more">more >></a>
+        
+      
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">锐格</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-7/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-C-语言实验-6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-6/">C  语言实验 6</a>
+    </h1>
+  
+
+        
+        <a href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-6/" class="archive-article-date">
+  	<time datetime="2021-12-15T11:23:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="C语言-锐格实验"><a href="#C语言-锐格实验" class="headerlink" title="C语言 锐格实验"></a>C语言 锐格实验</h3><h5 id="六-结构体数组"><a href="#六-结构体数组" class="headerlink" title="六.结构体数组"></a>六.结构体数组</h5><ol>
+<li>结构体—求n个学生的平均成绩：对给定的n个同学的成绩，求其平均成绩，并输出高于平均分之上的所有同学。</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line">struct student&#123;</span><br><span class="line">    char num[10];</span><br><span class="line">    double score;</span><br><span class="line">&#125;stu[105];</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    int n,i;</span><br><span class="line">    double sum,aver;</span><br><span class="line">    <span class="keyword">while</span>(scanf(<span class="string">&quot;%d&quot;</span>,&amp;n)!=-1)</span><br><span class="line">    &#123;</span><br><span class="line">        sum=0;</span><br><span class="line">        getchar();</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            scanf(<span class="string">&quot;%s %lf&quot;</span>,stu[i].num,&amp;stu[i].score);</span><br><span class="line">            sum+=stu[i].score;</span><br><span class="line">        &#125;</span><br><span class="line">        aver=sum/n;</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(stu[i].score&gt;aver)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%8s %.1lf\n&quot;</span>,stu[i].num,stu[i].score);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-6/#more">more >></a>
+        
+      
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">锐格</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-C-语言实验-5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-5/">C 语言实验 5</a>
+    </h1>
+  
+
+        
+        <a href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-5/" class="archive-article-date">
+  	<time datetime="2021-12-15T11:14:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="C语言-锐格实验"><a href="#C语言-锐格实验" class="headerlink" title="C语言 锐格实验"></a>C语言 锐格实验</h3><h5 id="五-结构体"><a href="#五-结构体" class="headerlink" title="五.结构体"></a>五.结构体</h5><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><p>从键盘读入学生的信息：学号（8位整数）、姓名（20个字符）、高等数学课程的成绩（2位小数）。 然后使用结构体来将这些数据读入并输出。输出时注意字段之间是2个空格！</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line">struct student&#123;</span><br><span class="line">    char num[10];</span><br><span class="line">    char name[25];</span><br><span class="line">    double score;</span><br><span class="line">&#125;stu;</span><br><span class="line"></span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    int n;</span><br><span class="line">    scanf(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    getchar();</span><br><span class="line">    int i;</span><br><span class="line">    <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        scanf(<span class="string">&quot;%s&quot;</span>,stu.num);</span><br><span class="line">        getchar();</span><br><span class="line">        scanf(<span class="string">&quot;%s&quot;</span>,stu.name);</span><br><span class="line">        getchar();</span><br><span class="line">        scanf(<span class="string">&quot;%lf&quot;</span>,&amp;stu.score);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%s  %s  %.2lf\n&quot;</span>,stu.num,stu.name,stu.score);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-5/#more">more >></a>
+        
+      
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">锐格</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-5/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-C-语言实验-4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-4/">C 语言实验 4</a>
+    </h1>
+  
+
+        
+        <a href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-4/" class="archive-article-date">
+  	<time datetime="2021-12-15T11:08:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="C语言-锐格实验"><a href="#C语言-锐格实验" class="headerlink" title="C语言 锐格实验"></a>C语言 锐格实验</h3><h5 id="四-指针与函数"><a href="#四-指针与函数" class="headerlink" title="四.指针与函数"></a>四.指针与函数</h5><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><p>某班级期末考试科目为数学、英语和物理。有最多不超过人参加考试。请编程计算：每个同学的总分和平均分；每门课程的总分和平均分？</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line">double a[25][5];</span><br><span class="line">double sub[5];</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    int n,i,j;</span><br><span class="line">    double sum;</span><br><span class="line">    <span class="keyword">while</span>(scanf(<span class="string">&quot;%d&quot;</span>,&amp;n)!=-1)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;5;i++) sub[i]=0;</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            scanf(<span class="string">&quot;%lf %lf %lf&quot;</span>,&amp;a[i][1],&amp;a[i][2],&amp;a[i][3]);</span><br><span class="line">            sub[0]+=a[i][1];</span><br><span class="line">            sub[1]+=a[i][2];</span><br><span class="line">            sub[2]+=a[i][3];</span><br><span class="line">            sum=(a[i][1]+a[i][2]+a[i][3]);</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%.2lf %.2lf\n&quot;</span>,sum,(sum/3));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;3;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%.2lf %.2lf\n&quot;</span>,sub[i],sub[i]/n);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-4/#more">more >></a>
+        
+      
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">锐格</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-4/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-C-语言实验-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-3/">C 语言实验 3</a>
+    </h1>
+  
+
+        
+        <a href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-3/" class="archive-article-date">
+  	<time datetime="2021-12-15T11:02:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="C语言-锐格实验"><a href="#C语言-锐格实验" class="headerlink" title="C语言 锐格实验"></a>C语言 锐格实验</h3><h5 id="三-指针与数组"><a href="#三-指针与数组" class="headerlink" title="三.指针与数组"></a>三.指针与数组</h5><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><p>请将输入的三个整数按照从小到大的顺序输出。整数的范围从。输入数据有多组，每组输入三个整型数据，采用指针编程实现将三个数从小到大排序，排序后输出。要求排序部分用自定义函数实现。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;string.h&gt;</span></span><br><span class="line">int swap(int *x,int *y,int *z);</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    int a,b,c;</span><br><span class="line">    <span class="keyword">while</span>(scanf(<span class="string">&quot;%d %d %d&quot;</span>,&amp;a,&amp;b,&amp;c)!=-1)</span><br><span class="line">    &#123;</span><br><span class="line">        swap(&amp;a,&amp;b,&amp;c);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d %d %d\n&quot;</span>,a,b,c);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">int swap(int *x,int *y,int *z)</span><br><span class="line">&#123;</span><br><span class="line">    int t;</span><br><span class="line">    <span class="keyword">if</span>(*x &gt; *y)</span><br><span class="line">    &#123;</span><br><span class="line">        t=*x;</span><br><span class="line">        *x=*y;</span><br><span class="line">        *y=t;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(*x&gt;*z)</span><br><span class="line">    &#123;</span><br><span class="line">        t=*x;</span><br><span class="line">        *x=*z;</span><br><span class="line">        *z=t;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(*y&gt;*z)</span><br><span class="line">    &#123;</span><br><span class="line">        t=*y;</span><br><span class="line">        *y=*z;</span><br><span class="line">        *z=t;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-3/#more">more >></a>
+        
+      
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">锐格</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-3/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-C-语言实验-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

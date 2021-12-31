@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://lbl1126.github.io">
-  <title>Archives: 2021/12 | lubolin</title>
+  <title>Java IO流的基本使用 | lubolin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="--nefu">
-<meta property="og:type" content="website">
-<meta property="og:title" content="lubolin">
-<meta property="og:url" content="https://lbl1126.github.io/archives/2021/12/index.html">
+  <meta name="description" content="创建目录及文件 1234567891011121314151617181920212223242526272829&#x2F;** * 基于指定文件名称创建目录及文件 * 如果文件已经存在，则忽略 * * @param fileName * @throws IOException  *&#x2F;private static void createFile(String fileName) throws IOExce">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java IO流的基本使用">
+<meta property="og:url" content="https://lbl1126.github.io/2021/12/31/Java-IO%E6%B5%81%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="lubolin">
-<meta property="og:description" content="--nefu">
+<meta property="og:description" content="创建目录及文件 1234567891011121314151617181920212223242526272829&#x2F;** * 基于指定文件名称创建目录及文件 * 如果文件已经存在，则忽略 * * @param fileName * @throws IOException  *&#x2F;private static void createFile(String fileName) throws IOExce">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-12-31T10:52:25.000Z">
+<meta property="article:modified_time" content="2021-12-31T10:57:53.975Z">
 <meta property="article:author" content="lubolin">
 <meta name="twitter:card" content="summary">
   
@@ -167,352 +169,110 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Java-IO流的基本使用" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/12/31/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93-2/" class="archive-article-date">
-  	<time datetime="2021-12-31T11:08:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-31</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/12/31/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E6%80%BB%E7%BB%93-2/">数据库基本操作总结 2</a>
+    <h1 class="article-title" itemprop="name">
+      Java IO流的基本使用
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/12/31/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="archive-article-date">
-  	<time datetime="2021-12-31T11:00:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/12/31/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库基本操作总结 1</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/12/31/Java-IO%E6%B5%81%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+        
+        <a href="/2021/12/31/Java-IO%E6%B5%81%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="archive-article-date">
   	<time datetime="2021-12-31T10:52:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-31</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/12/31/Java-IO%E6%B5%81%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">Java IO流的基本使用</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>创建目录及文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 基于指定文件名称创建目录及文件</span><br><span class="line"> * 如果文件已经存在，则忽略</span><br><span class="line"> *</span><br><span class="line"> * @param fileName</span><br><span class="line"> * @throws IOException </span><br><span class="line"> */</span><br><span class="line">private static void createFile(String fileName) throws IOException &#123;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">	Path dir = Paths.get(fileName);</span><br><span class="line">	Files.createDirectories(dir.getParent());// 创建目录，存在目录也不会抛出异常</span><br><span class="line">	try&#123;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">		Files.createFile(dir);// 创建文件，若文件已经存在则会抛出异常</span><br><span class="line">		System.out.println(<span class="string">&quot;创建文件成功！文件位置：&quot;</span> + fileName);</span><br><span class="line">	&#125;</span><br><span class="line">	catch(FileAlreadyExistsException e) &#123;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">		System.out.println(<span class="string">&quot;文件 &quot;</span> + fileName + <span class="string">&quot; 已存在，无需创建！&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>写入文件（基于Files.write或者BufferedWriter）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 提示：文件以字节操作，因此可以</span><br><span class="line"> * 字符串，转字节数组，直接基于Files写入文件</span><br><span class="line"> * </span><br><span class="line"> * @param fileName</span><br><span class="line"> * @param content</span><br><span class="line"> * @throws IOException </span><br><span class="line"> */</span><br><span class="line">static void write(String target, String content) &#123;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">	byte[] buffer = content.getBytes();</span><br><span class="line">	Path p = Paths.get(target);</span><br><span class="line">	try &#123;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">		Files.write(p, buffer); // 默认是覆盖内容</span><br><span class="line">		//Files.write(p, buffer, StandardOpenOption.APPEND); // 添加内容</span><br><span class="line">		System.out.println(<span class="string">&quot;数据写入成功！文件位置：&quot;</span> + target);</span><br><span class="line">	&#125; catch (IOException e) &#123;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        <div class="article-info info-on-right">
-          
-          
+<p>或者可以用直接用的BufferedWriter：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">private static void writeToFile(String fileName, String content) throws IOException&#123;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">	String[] lines = content.split(&quot;\r\n&quot;); // 先把要写入的字符串按行分割</span><br><span class="line">	try( BufferedWriter output = new BufferedWriter(new FileWriter(fileName)); ) &#123;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">		for (String line: lines) &#123;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">			output.write(line); // 写入一行(不含换行符)</span><br><span class="line">			output.newLine(); // 写入换行符</span><br><span class="line">		&#125;</span><br><span class="line">		output.flush();</span><br><span class="line">		System.out.println(&quot;数据写入成功！文件位置：&quot; + fileName);</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println();</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>基于基本IO复制文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 基于基本IO，以及字节数组缓冲区，复制文件</span><br><span class="line"> * 打印显示循环读写循环次数</span><br><span class="line"> *</span><br><span class="line"> * @param sourceFile</span><br><span class="line"> * @param targetFile</span><br><span class="line"> * @throws IOException </span><br><span class="line"> */</span><br><span class="line">private static void copyByIO(String sourceFile, String targetFile) throws IOException &#123;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">	</span><br><span class="line">	try( InputStream input = new FileInputStream(sourceFile);</span><br><span class="line">	     OutputStream output = new FileOutputStream(targetFile); )&#123;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">		int size = 4;</span><br><span class="line">		byte[] buffer = new byte[size]; // 字节数组缓冲区，大小为size</span><br><span class="line">		int len;</span><br><span class="line">		int cnt = 0;</span><br><span class="line">		<span class="keyword">while</span>( (len = input.read(buffer)) != -1) &#123;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">			output.write(buffer, 0, len);</span><br><span class="line">			cnt++;</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(sourceFile + <span class="string">&quot; -&gt; &quot;</span> + targetFile + <span class="string">&quot; 复制成功！&quot;</span>);</span><br><span class="line">		System.out.println(<span class="string">&quot;字节数组缓冲区大小为&quot;</span> + size + <span class="string">&quot;时，读写循环次数为&quot;</span> + cnt + <span class="string">&quot;\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>基于NIO复制文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 基于NIO，实现文件的复制</span><br><span class="line"> *</span><br><span class="line"> * @param sourceFile</span><br><span class="line"> * @param targetFile</span><br><span class="line"> * @throws IOException </span><br><span class="line"> */</span><br><span class="line">private static void copyByNIO(String sourceFile, String targetFile) throws IOException &#123;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">	Path <span class="built_in">source</span> = Paths.get(sourceFile);</span><br><span class="line">	Path target = Paths.get(targetFile);</span><br><span class="line">	Files.createDirectories(target.getParent());</span><br><span class="line">	Files.copy(<span class="built_in">source</span>, target, StandardCopyOption.REPLACE_EXISTING); // 如果输出文件存在，则替换</span><br><span class="line">	System.out.println(sourceFile + <span class="string">&quot; -&gt; &quot;</span> + targetFile + <span class="string">&quot; 复制成功！\n&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<p>删除文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 删除文件</span><br><span class="line"> *</span><br><span class="line"> * @param fileName</span><br><span class="line"> * @throws IOException </span><br><span class="line"> */</span><br><span class="line">private static void deleteFile(String fileName) throws IOException &#123;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">	Path dir = Paths.get(fileName);</span><br><span class="line">	Files.deleteIfExists(dir);</span><br><span class="line">	System.out.println(fileName + <span class="string">&quot; 删除成功！\n&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>递归遍历指定目录下所有文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 遍历打印指定目录下全部目录/文件名称</span><br><span class="line"> *</span><br><span class="line"> * @param dir</span><br><span class="line"> * @throws IOException </span><br><span class="line"> */</span><br><span class="line">private static void walkDirectories(String dir) throws IOException &#123;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">	Path d = Paths.get(dir);</span><br><span class="line">	Files.walk(d)</span><br><span class="line">		//.sorted(Comparator.reverseOrder()) // 反向遍历</span><br><span class="line">		.forEach(System.out::println);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>完整代码：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br></pre></td><td class="code"><pre><span class="line">import java.io.BufferedWriter;</span><br><span class="line">import java.io.FileInputStream;</span><br><span class="line">import java.io.FileOutputStream;</span><br><span class="line">import java.io.FileWriter;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.io.InputStream;</span><br><span class="line">import java.io.OutputStream;</span><br><span class="line">import java.nio.file.FileAlreadyExistsException;</span><br><span class="line">import java.nio.file.Files;</span><br><span class="line">import java.nio.file.Path;</span><br><span class="line">import java.nio.file.Paths;</span><br><span class="line">import java.nio.file.StandardCopyOption;</span><br><span class="line">import java.util.Comparator;</span><br><span class="line"></span><br><span class="line">public class IOTest &#123;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">    </span><br><span class="line">	public static void main(String[] args) throws IOException &#123;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">        </span><br><span class="line">		String fileName = <span class="string">&quot;C:/example/from.txt&quot;</span>;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;----- 创建文件 ------&quot;</span>);</span><br><span class="line">        createFile(fileName);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;-----  将字符串写入文件 -------&quot;</span>);</span><br><span class="line">        // \r\n在txt文本中换行</span><br><span class="line">        String str =</span><br><span class="line">                <span class="string">&quot;白日依山尽\r\n&quot;</span> +</span><br><span class="line">                <span class="string">&quot;黄河入海流\r\n&quot;</span> +</span><br><span class="line">                <span class="string">&quot;欲穷千里目\r\n&quot;</span> +</span><br><span class="line">                <span class="string">&quot;更上一层楼\r\n&quot;</span>;</span><br><span class="line">        writeToFile(fileName, str);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;--------- 基于基本IO流实现文件的复制 ----------&quot;</span>);</span><br><span class="line">        String toFile = <span class="string">&quot;C:/example/to.txt&quot;</span>;</span><br><span class="line">        copyByIO(fileName, toFile);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;--------- 基于NIO实现文件的复制 ----------&quot;</span>);</span><br><span class="line">        String toFile2 = <span class="string">&quot;C:/example/nio/to.txt&quot;</span>;</span><br><span class="line">        copyByNIO(fileName, toFile2);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;---------- 删除指定文件 -------------&quot;</span>);</span><br><span class="line">        deleteFile(toFile);</span><br><span class="line">        </span><br><span class="line">        System.out.println(<span class="string">&quot;---------- 遍历指定目录文件 -------------&quot;</span>);</span><br><span class="line">        String dir = <span class="string">&quot;C:/example&quot;</span>;</span><br><span class="line">        walkDirectories(dir);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 基于指定文件名称创建目录及文件</span><br><span class="line">     * 如果文件已经存在，则忽略</span><br><span class="line">     *</span><br><span class="line">     * @param fileName</span><br><span class="line">     * @throws IOException </span><br><span class="line">     */</span><br><span class="line">    private static void createFile(String fileName) throws IOException &#123;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">    	Path dir = Paths.get(fileName);</span><br><span class="line">    	Files.createDirectories(dir.getParent());// 创建目录，存在目录也不会抛出异常</span><br><span class="line">    	try&#123;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">    		Files.createFile(dir);// 创建文件，若文件已经存在则会抛出异常</span><br><span class="line">    		System.out.println(<span class="string">&quot;创建文件成功！文件位置：&quot;</span> + fileName);</span><br><span class="line">    	&#125;</span><br><span class="line">    	catch(FileAlreadyExistsException e) &#123;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">    		System.out.println(<span class="string">&quot;文件 &quot;</span> + fileName + <span class="string">&quot; 已存在，无需创建！&quot;</span>);</span><br><span class="line">    	&#125;</span><br><span class="line">    	System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 提示：文件以字节操作，因此可以</span><br><span class="line">     * 字符串，转字节数组，直接基于Files写入文件</span><br><span class="line">     * </span><br><span class="line">     * (注：我是直接用的BufferedWriter，比较方便)</span><br><span class="line">     *</span><br><span class="line">     * @param fileName</span><br><span class="line">     * @param content</span><br><span class="line">     * @throws IOException </span><br><span class="line">     */</span><br><span class="line">    private static void writeToFile(String fileName, String content) throws IOException&#123;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">    	String[] lines = content.split(<span class="string">&quot;\r\n&quot;</span>); // 先把要写入的字符串按行分割</span><br><span class="line">    	try( BufferedWriter output = new BufferedWriter(new FileWriter(fileName)); ) &#123;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">    		<span class="keyword">for</span> (String line: lines) &#123;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">    			output.write(line); // 写入一行(不含换行符)</span><br><span class="line">    			output.newLine(); // 写入换行符</span><br><span class="line">    		&#125;</span><br><span class="line">    		output.flush();</span><br><span class="line">    		System.out.println(<span class="string">&quot;数据写入成功！文件位置：&quot;</span> + fileName);</span><br><span class="line">    	&#125;</span><br><span class="line">    	System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 基于基本IO，以及字节数组缓冲区，复制文件</span><br><span class="line">     * 打印显示循环读写循环次数</span><br><span class="line">     *</span><br><span class="line">     * @param sourceFile</span><br><span class="line">     * @param targetFile</span><br><span class="line">     * @throws IOException </span><br><span class="line">     */</span><br><span class="line">    private static void copyByIO(String sourceFile, String targetFile) throws IOException &#123;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">    	</span><br><span class="line">    	try( InputStream input = new FileInputStream(sourceFile);</span><br><span class="line">    	     OutputStream output = new FileOutputStream(targetFile); )&#123;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">    		int size = 4;</span><br><span class="line">    		byte[] buffer = new byte[size]; // 字节数组缓冲区，大小为size</span><br><span class="line">    		int len;</span><br><span class="line">    		int cnt = 0;</span><br><span class="line">    		<span class="keyword">while</span>( (len = input.read(buffer)) != -1) &#123;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">    			output.write(buffer, 0, len);</span><br><span class="line">    			cnt++;</span><br><span class="line">    		&#125;</span><br><span class="line">    		System.out.println(sourceFile + <span class="string">&quot; -&gt; &quot;</span> + targetFile + <span class="string">&quot; 复制成功！&quot;</span>);</span><br><span class="line">    		System.out.println(<span class="string">&quot;字节数组缓冲区大小为&quot;</span> + size + <span class="string">&quot;时，读写循环次数为&quot;</span> + cnt + <span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 基于NIO，实现文件的复制</span><br><span class="line">     *</span><br><span class="line">     * @param sourceFile</span><br><span class="line">     * @param targetFile</span><br><span class="line">     * @throws IOException </span><br><span class="line">     */</span><br><span class="line">    private static void copyByNIO(String sourceFile, String targetFile) throws IOException &#123;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">    	Path <span class="built_in">source</span> = Paths.get(sourceFile);</span><br><span class="line">    	Path target = Paths.get(targetFile);</span><br><span class="line">    	Files.createDirectories(target.getParent());</span><br><span class="line">    	Files.copy(<span class="built_in">source</span>, target, StandardCopyOption.REPLACE_EXISTING); // 如果输出文件存在，则替换</span><br><span class="line">    	System.out.println(sourceFile + <span class="string">&quot; -&gt; &quot;</span> + targetFile + <span class="string">&quot; 复制成功！\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 删除文件</span><br><span class="line">     *</span><br><span class="line">     * @param fileName</span><br><span class="line">     * @throws IOException </span><br><span class="line">     */</span><br><span class="line">    private static void deleteFile(String fileName) throws IOException &#123;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">    	Path dir = Paths.get(fileName);</span><br><span class="line">    	Files.deleteIfExists(dir);</span><br><span class="line">    	System.out.println(fileName + <span class="string">&quot; 删除成功！\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 遍历打印指定目录下全部目录/文件名称</span><br><span class="line">     *</span><br><span class="line">     * @param dir</span><br><span class="line">     * @throws IOException </span><br><span class="line">     */</span><br><span class="line">    private static void walkDirectories(String dir) throws IOException &#123;</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">    	Path d = Paths.get(dir);</span><br><span class="line">    	Files.walk(d)</span><br><span class="line">    		//.sorted(Comparator.reverseOrder()) // 反向遍历</span><br><span class="line">    		.forEach(System.out::println);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/12/31/Java-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91/" class="archive-article-date">
-  	<time datetime="2021-12-31T10:43:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-31</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2021/12/31/%E6%95%B0%E6%8D%AE%E5%BA%93/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          数据库基本操作总结 1
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/12/31/Java-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java 多线程并发</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/12/31/Java-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%B9%B6%E5%8F%91/">Java 多线程并发</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/12/31/Java-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" class="archive-article-date">
-  	<time datetime="2021-12-31T10:31:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/12/31/Java-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/">Java 异常处理</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/12/28/Java-Optional%E6%93%8D%E4%BD%9C/" class="archive-article-date">
-  	<time datetime="2021-12-28T14:03:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/12/28/Java-Optional%E6%93%8D%E4%BD%9C/">Java Optional操作</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/12/28/Java1/" class="archive-article-date">
-  	<time datetime="2021-12-28T13:13:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/12/28/Java1/">Java 集合与函数式编程</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-10/" class="archive-article-date">
-  	<time datetime="2021-12-15T11:41:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-10/">C 语言实验 10</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">锐格</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-9/" class="archive-article-date">
-  	<time datetime="2021-12-15T11:37:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-9/">C 语言实验 9</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">锐格</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-8/" class="archive-article-date">
-  	<time datetime="2021-12-15T11:33:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-8/">C 语言实验 8</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">锐格</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2021/12/page/2/">2</a><a class="extend next" rel="next" href="/archives/2021/12/page/2/">下一页</a>
-    </nav>
   
 
 
@@ -545,8 +305,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
