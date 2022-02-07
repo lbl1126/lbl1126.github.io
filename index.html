@@ -169,6 +169,165 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-matlab基础-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/01/01/matlab%E5%9F%BA%E7%A1%80-2/">matlab基础 2</a>
+    </h1>
+  
+
+        
+        <a href="/2022/01/01/matlab%E5%9F%BA%E7%A1%80-2/" class="archive-article-date">
+  	<time datetime="2022-01-01T13:04:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="一、绘图代码-示例"><a href="#一、绘图代码-示例" class="headerlink" title="一、绘图代码 ,示例"></a>一、绘图代码 ,示例</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">% 初始化</span><br><span class="line">clear;</span><br><span class="line">clc;</span><br><span class="line"></span><br><span class="line">% 将图片的字体等格式设置成latex样式，方便输入公式</span><br><span class="line">set(0,&#x27;defaulttextinterpreter&#x27;,&#x27;latex&#x27;);</span><br><span class="line">set(0,&#x27;defaultAxesTickLabelInterpreter&#x27;,&#x27;latex&#x27;);</span><br><span class="line">set(0,&#x27;defaultLegendInterpreter&#x27;,&#x27;latex&#x27;);</span><br><span class="line"></span><br><span class="line">set(groot,&#x27;defaultLineLineWidth&#x27;,2); % 更改默认线宽</span><br><span class="line"></span><br><span class="line">%% 产生x,y数据</span><br><span class="line">x=linspace(0,2*pi,20);</span><br><span class="line">y&#123;1&#125;=sin(x);</span><br><span class="line">y&#123;2&#125;=cos(x);</span><br><span class="line">y&#123;3&#125;=x;</span><br><span class="line">y&#123;4&#125;=exp(sin(x));</span><br><span class="line"></span><br><span class="line">%% 绘制图1</span><br><span class="line">figure(1);</span><br><span class="line">plot(x,y&#123;1&#125;,&#x27;--ro&#x27;,... % --虚线 r红色 o圆圈标记</span><br><span class="line">	x,y&#123;2&#125;,&#x27;:k^&#x27;,... % :点组成的线 k黑色 ^三角形标记</span><br><span class="line">	x,y&#123;3&#125;,&#x27;-.&#x27;,... % -.线如-.</span><br><span class="line">	x,y&#123;4&#125;);</span><br><span class="line">xlabel(&#x27;x轴&#x27;);</span><br><span class="line">ylabel(&#x27;y轴&#x27;);</span><br><span class="line">title(&#x27;例图&#x27;);</span><br><span class="line">% legend显示图中曲线对应的公式（在坐标区上添加图例）</span><br><span class="line">legend(&#x27;$y=sin(x)$&#x27;,&#x27;$y=cos(x)$&#x27;,&#x27;$y=x$&#x27;,&#x27;$y=e^&#123;sin(x)&#125;$&#x27;,&#x27;Location&#x27;,&#x27;best&#x27;);</span><br><span class="line">xlim([0,2*pi]); % 设置x轴范围</span><br><span class="line">print(&#x27;C:\Users\Desktop\example1&#x27;,&#x27;-dpng&#x27;); % 保存为png格式图片到桌面路径 </span><br><span class="line"></span><br><span class="line">%% 绘制图2</span><br><span class="line">figure(2);</span><br><span class="line"></span><br><span class="line">subplot(2,2,1); % 分成2*2四个子图，开始画第一个子图</span><br><span class="line">plot(x,y&#123;1&#125;,&#x27;--&#x27;);</span><br><span class="line">title(&#x27;$y=sin(x)$&#x27;);</span><br><span class="line"></span><br><span class="line">subplot(2,2,2); % 分成2*2四个子图，开始画第二个子图</span><br><span class="line">plot(x,y&#123;2&#125;,&#x27;:&#x27;);</span><br><span class="line">title(&#x27;$y=cos(x)$&#x27;);</span><br><span class="line"></span><br><span class="line">subplot(2,2,[3,4]); % 第3,4个子图合并，写成[3,4]</span><br><span class="line">plot(x,y&#123;3&#125;,&#x27;:&#x27;,x,y&#123;4&#125;); % 2个子图合并</span><br><span class="line">legend(&#x27;$y=x$&#x27;,&#x27;$y=e^&#123;sin(x)&#125;$&#x27;,&#x27;Location&#x27;,&#x27;best&#x27;);</span><br><span class="line">xlim([0,2*pi]); % 设置x轴范围</span><br><span class="line"></span><br><span class="line">print(&#x27;C:\Users\Desktop\example2&#x27;,&#x27;-dpng&#x27;); % 保存为png格式图片到桌面路径 </span><br></pre></td></tr></table></figure>
+<h4 id="二、读取excel表格"><a href="#二、读取excel表格" class="headerlink" title="二、读取excel表格"></a>二、读取excel表格</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">（1）readtable</span><br><span class="line"></span><br><span class="line">% 读取类型：table类型</span><br><span class="line">newraw=readtable(&#x27;C:\Users\Desktop\1.xlsx&#x27;); </span><br><span class="line">（2）xlsread</span><br><span class="line"></span><br><span class="line">% x纯数据  txt纯文本  raw未处理的原格式</span><br><span class="line">[x,txt,raw]=xlsread(&#x27;C:\Users\LJW\Desktop\1.xlsx&#x27;);</span><br><span class="line"></span><br><span class="line">readtable运行时间比xlsread短。</span><br></pre></td></tr></table></figure>
+
+<h4 id="三、时间处理函数"><a href="#三、时间处理函数" class="headerlink" title="三、时间处理函数"></a>三、时间处理函数</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; now=fix(clock) // 获取现在时间的行向量，表示2020.9.9 10:51:35</span><br><span class="line"></span><br><span class="line">now =</span><br><span class="line"></span><br><span class="line">        2020           9           9          10          51          35</span><br><span class="line"></span><br><span class="line">&gt;&gt; datestr(now) // 把行向量转换为现在时间的字符串</span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">    &#x27;09-Sep-2020 10:51:35&#x27;</span><br><span class="line"></span><br><span class="line">&gt;&gt; date // date直接获取当前日期</span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">    &#x27;09-Sep-2020&#x27;</span><br><span class="line"></span><br><span class="line">&gt;&gt; n=datenum(date) // 给出0000年到给定时间的天数</span><br><span class="line"></span><br><span class="line">n =</span><br><span class="line"></span><br><span class="line">      738043</span><br></pre></td></tr></table></figure>
+      
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/01/01/matlab%E5%9F%BA%E7%A1%80-2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-matlab基础-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/01/01/matlab%E5%9F%BA%E7%A1%80-1/">matlab基础 1</a>
+    </h1>
+  
+
+        
+        <a href="/2022/01/01/matlab%E5%9F%BA%E7%A1%80-1/" class="archive-article-date">
+  	<time datetime="2022-01-01T12:41:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>注意：matlab的注释用%标注</p>
+<h4 id="1-内置常量"><a href="#1-内置常量" class="headerlink" title="1.内置常量"></a>1.内置常量</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; eps // 计算机的最小数</span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">   2.2204e-16</span><br><span class="line"></span><br><span class="line">&gt;&gt; pi // 圆周率 </span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">    3.1416</span><br><span class="line">    </span><br><span class="line">&gt;&gt; i // sprt(-1)</span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">   0.0000 + 1.0000i</span><br><span class="line"></span><br><span class="line">&gt;&gt; j // sprt(-1)</span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">   0.0000 + 1.0000i</span><br></pre></td></tr></table></figure>
+<br>
+
+<h4 id="2-产生行向量"><a href="#2-产生行向量" class="headerlink" title="2.产生行向量"></a>2.产生行向量</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x=0:1:5 // [0,5]区间产生行向量，间隔为1</span><br><span class="line">x=0:5 // [0,5]区间产生行向量，默认间隔为1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; t=[0:0.2:0.6] // [0,0.6]区间产生行向量，间隔为0.2  </span><br><span class="line"></span><br><span class="line">// 写成 t=0:0.2:0.6 效果也一样</span><br><span class="line"></span><br><span class="line">t =</span><br><span class="line"></span><br><span class="line">         0    0.2000    0.4000    0.6000</span><br><span class="line"></span><br><span class="line">&gt;&gt; t=[0:0.2:0.7]</span><br><span class="line"></span><br><span class="line">t =</span><br><span class="line"></span><br><span class="line">         0    0.2000    0.4000    0.6000</span><br><span class="line">         </span><br><span class="line">&gt;&gt; t=linspace(1,2,3) // [1,2]区间按线性(等差数列)产生行向量，个数为3</span><br><span class="line"></span><br><span class="line">t =</span><br><span class="line"></span><br><span class="line">    1.0000    1.5000    2.0000</span><br><span class="line"></span><br><span class="line">&gt;&gt; t=linspace(1,2,4)</span><br><span class="line"></span><br><span class="line">t =</span><br><span class="line"></span><br><span class="line">    1.0000    1.3333    1.6667    2.0000</span><br><span class="line">    </span><br><span class="line">&gt;&gt; t=logspace(1,2,2) // [10^1,10^2]区间按等比数列产生行向量，个数为2</span><br><span class="line"></span><br><span class="line">t =</span><br><span class="line"></span><br><span class="line">    10   100</span><br><span class="line"></span><br><span class="line">&gt;&gt; t=logspace(1,2,3)</span><br><span class="line"></span><br><span class="line">t =</span><br><span class="line"></span><br><span class="line">   10.0000   31.6228  100.0000</span><br></pre></td></tr></table></figure>
+<br>
+#### 3.查看已有的变量信息
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; who</span><br><span class="line"></span><br><span class="line">您的变量为:</span><br><span class="line"></span><br><span class="line">ans  t    </span><br><span class="line"></span><br><span class="line">&gt;&gt; whos</span><br><span class="line">  Name      Size            Bytes  Class     Attributes</span><br><span class="line"></span><br><span class="line">  ans       1x1                 8  double              </span><br><span class="line">  t         1x3                24  double              </span><br><span class="line"></span><br><span class="line">&gt;&gt; size(t) // 列出n,m</span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">     1     3</span><br><span class="line"></span><br><span class="line">&gt;&gt; length(t) // 列出max(n,m)</span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">     3</span><br></pre></td></tr></table></figure>
+<br>
+
+<h4 id="4-矩阵赋值并取出子矩阵"><a href="#4-矩阵赋值并取出子矩阵" class="headerlink" title="4.矩阵赋值并取出子矩阵"></a>4.矩阵赋值并取出子矩阵</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">冒号表示按列堆叠成向量。</span><br><span class="line"></span><br><span class="line">&gt;&gt; A=[1,2;3,4]</span><br><span class="line"></span><br><span class="line">A =</span><br><span class="line"></span><br><span class="line">     1     2</span><br><span class="line">     3     4</span><br><span class="line"></span><br><span class="line">&gt;&gt; A(:) // 按列取出所有元素</span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">     1</span><br><span class="line">     3</span><br><span class="line">     2</span><br><span class="line">     4</span><br><span class="line"></span><br><span class="line">&gt;&gt; A(:,2) // 取出第2列</span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">     2</span><br><span class="line">     4</span><br><span class="line"></span><br><span class="line">&gt;&gt; A(2,:) // 取出第2行</span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">     3     4</span><br><span class="line"></span><br><span class="line">&gt;&gt; A=[1,2,3;4,5,6;7,8,9]</span><br><span class="line"></span><br><span class="line">A =</span><br><span class="line"></span><br><span class="line">     1     2     3</span><br><span class="line">     4     5     6</span><br><span class="line">     7     8     9</span><br><span class="line"></span><br><span class="line">&gt;&gt; A(2:3,1:2) // 取出第2行到第3行，第1列到第2列的所有元素</span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">     4     5</span><br><span class="line">     7     8</span><br></pre></td></tr></table></figure>
+<br>
+
+<h4 id="5-删除矩阵的整行或整列"><a href="#5-删除矩阵的整行或整列" class="headerlink" title="5.删除矩阵的整行或整列"></a>5.删除矩阵的整行或整列</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; A=[1,2;3,4]</span><br><span class="line"></span><br><span class="line">A =</span><br><span class="line"></span><br><span class="line">     1     2</span><br><span class="line">     3     4</span><br><span class="line"></span><br><span class="line">&gt;&gt; A(:,1)=[] // 删去第一列，即把第一列变成空矩阵[]</span><br><span class="line"></span><br><span class="line">&gt;&gt; B=[4,5;6,7]</span><br><span class="line"></span><br><span class="line">B =</span><br><span class="line"></span><br><span class="line">     4     5</span><br><span class="line">     6     7</span><br><span class="line"></span><br><span class="line">&gt;&gt; B(1,:)=[] // 删去第一行</span><br><span class="line"></span><br><span class="line">B =</span><br><span class="line"></span><br><span class="line">     6     7</span><br></pre></td></tr></table></figure>
+<br>
+#### 6.合并矩阵
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; A=[1,2,3]</span><br><span class="line"></span><br><span class="line">A =</span><br><span class="line"></span><br><span class="line">     1     2     3</span><br><span class="line"></span><br><span class="line">&gt;&gt; B=[4,5,6]</span><br><span class="line"></span><br><span class="line">B =</span><br><span class="line"></span><br><span class="line">     4     5     6</span><br><span class="line"></span><br><span class="line">&gt;&gt; C=[A,B] // 按行合并矩阵</span><br><span class="line"></span><br><span class="line">C =</span><br><span class="line"></span><br><span class="line">     1     2     3     4     5     6</span><br><span class="line"></span><br><span class="line">&gt;&gt; C=[A;B] // 按列合并矩阵</span><br><span class="line"></span><br><span class="line">C =</span><br><span class="line"></span><br><span class="line">     1     2     3</span><br><span class="line">     4     5     6</span><br></pre></td></tr></table></figure>
+7.矩阵的变换（转置、重塑、旋转）
+
+<p>（1）转置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; A=[1+i,2+i;3-i,4+i]</span><br><span class="line"></span><br><span class="line">A =</span><br><span class="line"></span><br><span class="line">   1.0000 + 1.0000i   2.0000 + 1.0000i</span><br><span class="line">   3.0000 - 1.0000i   4.0000 + 1.0000i</span><br><span class="line"></span><br><span class="line">&gt;&gt; A&#x27; // 共轭转置，转置后，虚部变为相反数</span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">   1.0000 - 1.0000i   3.0000 + 1.0000i</span><br><span class="line">   2.0000 - 1.0000i   4.0000 - 1.0000i</span><br><span class="line"></span><br><span class="line">&gt;&gt; A.&#x27; // 非共轭转置，转置后，虚部不变</span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">   1.0000 + 1.0000i   3.0000 - 1.0000i</span><br><span class="line">   2.0000 + 1.0000i   4.0000 + 1.0000i</span><br><span class="line"></span><br><span class="line">另外，对于实数矩阵的转置来说，A&#x27;与A.&#x27;没有区别。</span><br></pre></td></tr></table></figure>
+<br>
+（2）重塑
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; A=[1,2,3;4,5,6]</span><br><span class="line"></span><br><span class="line">A =</span><br><span class="line"></span><br><span class="line">     1     2     3</span><br><span class="line">     4     5     6</span><br><span class="line"></span><br><span class="line">&gt;&gt; reshape(A,3,2) // 按列顺序重塑矩阵A为3*2</span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">     1     5</span><br><span class="line">     4     3</span><br><span class="line">     2     6</span><br><span class="line"></span><br><span class="line">（3）逆时针旋转90度</span><br><span class="line"></span><br><span class="line">&gt;&gt; A</span><br><span class="line"></span><br><span class="line">A =</span><br><span class="line"></span><br><span class="line">     1     2     3</span><br><span class="line">     4     5     6</span><br><span class="line"></span><br><span class="line">&gt;&gt; rot90(A)</span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">     3     6</span><br><span class="line">     2     5</span><br><span class="line">     1     4</span><br><span class="line">   </span><br></pre></td></tr></table></figure>
+<h4 id="8-特殊矩阵"><a href="#8-特殊矩阵" class="headerlink" title="8.特殊矩阵"></a>8.特殊矩阵</h4> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; eye(3) // 单位矩阵</span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">     1     0     0</span><br><span class="line">     0     1     0</span><br><span class="line">     0     0     1</span><br><span class="line">     </span><br><span class="line">&gt;&gt; eye(3,4)</span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">     1     0     0     0</span><br><span class="line">     0     1     0     0</span><br><span class="line">     0     0     1     0</span><br><span class="line">     </span><br><span class="line">&gt;&gt; ones(2) // 全为1的矩阵</span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">     1     1</span><br><span class="line">     1     1</span><br><span class="line">     </span><br><span class="line">&gt;&gt; ones(2,3)</span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">     1     1     1</span><br><span class="line">     1     1     1</span><br><span class="line">     </span><br><span class="line">&gt;&gt; zeros(2) // 全为0的矩阵</span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">     0     0</span><br><span class="line">     0     0</span><br><span class="line">     </span><br><span class="line">&gt;&gt; zeros(2,3)</span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">     0     0     0</span><br><span class="line">     0     0     0</span><br><span class="line"></span><br><span class="line">&gt;&gt; diag([1,2,3]) // 产生对角矩阵</span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">     1     0     0</span><br><span class="line">     0     2     0</span><br><span class="line">     0     0     3</span><br><span class="line"></span><br><span class="line">&gt;&gt; rand(2) // 创建随机矩阵，服从均匀分布</span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">    0.2785    0.9575</span><br><span class="line">    0.5469    0.9649</span><br><span class="line"></span><br><span class="line">&gt;&gt; rand(2,1) </span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">    0.1576</span><br><span class="line">    0.9706</span><br><span class="line">    </span><br><span class="line">&gt;&gt; randn(2) // 创建随机矩阵，服从正态分布</span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">    0.5377   -2.2588</span><br><span class="line">    1.8339    0.8622</span><br><span class="line"></span><br><span class="line">&gt;&gt; randn(2,1)</span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">    0.3188</span><br><span class="line">   -1.3077</span><br><span class="line"></span><br><span class="line">&gt;&gt; randperm(5) // 产生随机排列</span><br><span class="line"></span><br><span class="line">ans =</span><br><span class="line"></span><br><span class="line">     5     3     1     2     4</span><br></pre></td></tr></table></figure>
+<h4 id="9-输入"><a href="#9-输入" class="headerlink" title="9.输入"></a>9.输入</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s=input(&#x27;please input a string: &#x27;,&#x27;s&#x27;);</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="10-输出"><a href="#10-输出" class="headerlink" title="10.输出"></a>10.输出</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt; x=rand(1,3)</span><br><span class="line"></span><br><span class="line">x =</span><br><span class="line"></span><br><span class="line">    0.9134    0.6324    0.0975</span><br><span class="line"></span><br><span class="line">&gt;&gt; fprintf(&quot;x=%.3f\n&quot;,x) // 输出x的所有元素，保留3位小数</span><br><span class="line">x=0.913</span><br><span class="line">x=0.632</span><br><span class="line">x=0.098</span><br><span class="line">&gt;&gt; fprintf(&quot;x=%.3f\n&quot;,x(2)) // 输出x[2]（可省略第1行的行下标）</span><br><span class="line">x=0.632</span><br><span class="line">&gt;&gt; fprintf(&quot;x=%.3f\n&quot;,x(1,2)) // 输出x[1][2]</span><br><span class="line">x=0.632</span><br><span class="line"></span><br><span class="line">&gt;&gt; y=[1,2;3,4]</span><br><span class="line"></span><br><span class="line">y =</span><br><span class="line"></span><br><span class="line">     1     2</span><br><span class="line">     3     4</span><br><span class="line"></span><br><span class="line">&gt;&gt; fprintf(&quot;y=%.3f\n&quot;,y) // 按列输出y的所有元素</span><br><span class="line">y=1.000</span><br><span class="line">y=3.000</span><br><span class="line">y=2.000</span><br><span class="line">y=4.000</span><br><span class="line">&gt;&gt; fprintf(&quot;y=%.3f\n&quot;,y(2,1)) // 输出y[2][1]</span><br><span class="line">y=3.000</span><br><span class="line">&gt;&gt; fprintf(&quot;y=%.3f\n&quot;,y(1)) // 输出y[1][1]（可省略第1列的列下标）</span><br><span class="line">y=1.000</span><br><span class="line">&gt;&gt; fprintf(&quot;y=%.3f\n&quot;,y(2)) // 输出y[2][1]（可省略第1列的列下标）</span><br><span class="line">y=3.000</span><br></pre></td></tr></table></figure>
+
+<h4 id="11-函数"><a href="#11-函数" class="headerlink" title="11.函数"></a>11.函数</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">编写函数，存于文件ave.m中，代码如下：</span><br><span class="line"></span><br><span class="line">% You can get the average of a vector.</span><br><span class="line">% Just input &quot;ave;&quot; to run this function.</span><br><span class="line">function y = ave(x)</span><br><span class="line">x = input(&#x27;input a vector x=&#x27;);</span><br><span class="line">[m,n] = size(x);</span><br><span class="line">if ~(m==1|n==1)</span><br><span class="line">	error(&#x27;please input a vector which is m=1 or n=1&#x27;)</span><br><span class="line">end</span><br><span class="line">y = sum(x)/length(x);</span><br><span class="line">fprintf(&quot;y=%.2f\n&quot;,y);</span><br></pre></td></tr></table></figure>
+      
+
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2022/01/01/matlab%E5%9F%BA%E7%A1%80-1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-数据库基本操作总结-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -734,181 +893,9 @@
 
 
   
-    <article id="post-C-语言实验-9" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-9/">C 语言实验 9</a>
-    </h1>
-  
-
-        
-        <a href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-9/" class="archive-article-date">
-  	<time datetime="2021-12-15T11:37:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="C语言-锐格实验"><a href="#C语言-锐格实验" class="headerlink" title="C语言 锐格实验"></a>C语言 锐格实验</h4><h5 id="九-链表2-基本访问操作"><a href="#九-链表2-基本访问操作" class="headerlink" title="九.链表2-基本访问操作"></a>九.链表2-基本访问操作</h5><h3 id="1、"><a href="#1、" class="headerlink" title="1、"></a>1、</h3><p>查找指定结点的前驱。利用前面学到的尾插法创建链表的方法，建立一个具有n个结点的单链表，之后输入一个整数x，查找x在链表中的前驱结点是哪个？若x是第一个结点，则输出“没有前驱”，如果x不存在，则输出“x不存在”。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line">struct table&#123;</span><br><span class="line">    int num;</span><br><span class="line">    struct table* next;</span><br><span class="line">&#125;;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    int n,i;</span><br><span class="line">    int findnum,flag;</span><br><span class="line">    struct table *head,*p,*q;</span><br><span class="line">    <span class="keyword">while</span>(scanf(<span class="string">&quot;%d&quot;</span>,&amp;n)!=-1)</span><br><span class="line">    &#123;</span><br><span class="line">        flag=0;</span><br><span class="line">        <span class="keyword">for</span>(i=0;i&lt;n;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            p=(struct table *)malloc(sizeof(struct table));</span><br><span class="line">            scanf(<span class="string">&quot;%d&quot;</span>,&amp;p-&gt;num);</span><br><span class="line">            <span class="keyword">if</span>(i==0)</span><br><span class="line">                head=q=p;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                q-&gt;next=p;</span><br><span class="line">            q=p;</span><br><span class="line">            p-&gt;next=NULL;</span><br><span class="line">        &#125;</span><br><span class="line">        scanf(<span class="string">&quot;%d&quot;</span>,&amp;findnum);</span><br><span class="line">        q=p=head;</span><br><span class="line">        <span class="keyword">while</span>(p!=NULL)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(p-&gt;num==findnum)</span><br><span class="line">            &#123;</span><br><span class="line">                flag=1;</span><br><span class="line">                <span class="keyword">if</span>(p==head)&#123;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">&quot;没有前驱\n&quot;</span>);</span><br><span class="line">                    <span class="built_in">break</span>;</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                    <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,q-&gt;num);</span><br><span class="line">                    <span class="built_in">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            q=p;</span><br><span class="line">            p=p-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(flag==0) <span class="built_in">printf</span>(<span class="string">&quot;x不存在\n&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-9/#more">more >></a>
-        
-      
-
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">锐格</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-9/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-C-语言实验-8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-8/">C 语言实验 8</a>
-    </h1>
-  
-
-        
-        <a href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-8/" class="archive-article-date">
-  	<time datetime="2021-12-15T11:33:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="C语言-锐格实验"><a href="#C语言-锐格实验" class="headerlink" title="C语言 锐格实验"></a>C语言 锐格实验</h3><h5 id="八-链表1-动态结点"><a href="#八-链表1-动态结点" class="headerlink" title="八.链表1-动态结点"></a>八.链表1-动态结点</h5><h3 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h3><p>结点的申请和使用,假设结点的信息如下所示，利用该结构申请三个结点a，b，c。将他们依次链接在头结点H的后面，之后申请结点D，将D插入到b和c之间，最后按顺序输出该链表。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;string.h&gt;</span></span><br><span class="line">struct node&#123;</span><br><span class="line">    int data;</span><br><span class="line">    struct node *next;</span><br><span class="line">&#125;;</span><br><span class="line">int <span class="function"><span class="title">main</span></span>()</span><br><span class="line">&#123;</span><br><span class="line">    int t,i;</span><br><span class="line">    struct node *head,*p,*q,*addloca,*addst,*adden;</span><br><span class="line">    <span class="keyword">for</span>(i=0;i&lt;3;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        p=(struct node *)(malloc(sizeof(struct node)));</span><br><span class="line">        scanf(<span class="string">&quot;%d&quot;</span>,&amp;(p-&gt;data));</span><br><span class="line">        <span class="keyword">if</span>(i==0)</span><br><span class="line">            head=q=p;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            q-&gt;next=p;</span><br><span class="line">        p-&gt;next=NULL;</span><br><span class="line">        q=p;</span><br><span class="line">    &#125;</span><br><span class="line">    p=(struct node *)(malloc(sizeof(struct node)));</span><br><span class="line">    scanf(<span class="string">&quot;%d&quot;</span>,&amp;p-&gt;data);</span><br><span class="line">    addloca=p;</span><br><span class="line"></span><br><span class="line">    addst=head-&gt;next;</span><br><span class="line">    adden=addst-&gt;next;</span><br><span class="line">    addst-&gt;next=addloca;</span><br><span class="line">    addloca-&gt;next=adden;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;Head:&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span>(i=0;i&lt;4;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(i==0)</span><br><span class="line">            p=q=head;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            p=q-&gt;next;</span><br><span class="line">        q=p;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;-&gt;%d&quot;</span>,p-&gt;data);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-8/#more">more >></a>
-        
-      
-
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">锐格</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/12/15/C-%E8%AF%AD%E8%A8%80%E5%AE%9E%E9%AA%8C-8/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
     </nav>
   
 
@@ -1180,5 +1167,5 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 </div>
   </div>
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false});</script></body>
 </html>
